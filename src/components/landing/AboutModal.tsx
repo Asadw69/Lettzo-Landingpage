@@ -24,9 +24,9 @@ const AboutModal = ({ isOpen, onClose }: AboutModalProps) => {
                         About Lettzo
                     </DialogTitle>
                     <DialogDescription className="text-lg font-medium text-muted-foreground leading-relaxed">
-                        Lettzo is a social meetup platform built for spontaneous, real-life connections.
-                        We're on a mission to bring people together for shared experiences—from
-                        coffee catch-ups to gym sessions—without the pressure of dating apps.
+                        Lettzo helps people turn “maybe later” into real plans.
+                        Create or join nearby activities — coffee, gym, movies, walks, travel, sports, etc. and meet people through shared moments, not endless chats.
+                        No dating pressure. Just real connections, made easy.
                     </DialogDescription>
                 </DialogHeader>
 

@@ -5,7 +5,7 @@ const features = [
   {
     icon: Zap,
     title: "Spontaneous Meetups",
-    description: "Got an hour for coffee? A quick gym session? Create a plan and find someone to join you instantly.",
+    description: "Got an hour for coffee or a quick gym session ? Create a plan and find someone to join you instantly.",
   },
   {
     icon: Map,
@@ -25,7 +25,7 @@ const features = [
   {
     icon: Tag,
     title: "Vibe Matching",
-    description: "Select your interests—from padel and coffee to travel and tech—and find your crowd.",
+    description: "Find people who match your vibe.",
   },
 ];
 

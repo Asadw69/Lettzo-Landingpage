@@ -50,8 +50,8 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
             {/* Subtext */}
             <div className="space-y-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <p className="text-xl md:text-2xl font-medium text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Coffee runs. Gym sessions. Movie nights. Travel adventures.
-                Find people who want to do the same things—right now.
+                Whatever you’re in the mood for, find people ready to join.
+                Coffee, gym, movies, travel, and more.
               </p>
               <p className="text-sm font-bold text-primary/60 uppercase tracking-widest bg-primary/5 w-fit px-3 py-1 rounded-md mx-auto lg:mx-0">
                 Not a dating app. Just real plans.
