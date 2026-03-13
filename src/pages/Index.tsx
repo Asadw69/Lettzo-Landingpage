@@ -3,28 +3,47 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import MapSection from "@/components/landing/MapSection";
+import SocialSection from "@/components/landing/SocialSection";
+import WaitlistSection from "@/components/landing/WaitlistSection";
 import Footer from "@/components/landing/Footer";
-import ComingSoonModal from "@/components/landing/ComingSoonModal";
 import AboutModal from "@/components/landing/AboutModal";
 
 const Index = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  // Scroll to waitlist function
+  const scrollToWaitlist = () => {
+    const section = document.getElementById("waitlist");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const openAbout = () => setIsAboutOpen(true);
   const closeAbout = () => setIsAboutOpen(false);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar onOpenModal={openModal} onOpenAbout={openAbout} />
-      <HeroSection onOpenModal={openModal} />
-      <FeaturesSection />
-      <MapSection />
+    <div className="min-h-screen bg-background text-foreground scroll-smooth">
+      {/* Modern Fixed Navbar */}
+      <Navbar onOpenModal={scrollToWaitlist} onOpenAbout={openAbout} />
+      
+      {/* Main Sections */}
+      <main>
+        <HeroSection onOpenModal={scrollToWaitlist} />
+        
+        <FeaturesSection />
+        
+        <MapSection />
+        
+        <SocialSection />
+        
+        <WaitlistSection />
+      </main>
+
+      {/* Footer */}
       <Footer />
-      <ComingSoonModal isOpen={isModalOpen} onClose={closeModal} />
+
+      {/* Modals */}
       <AboutModal isOpen={isAboutOpen} onClose={closeAbout} />
     </div>
   );

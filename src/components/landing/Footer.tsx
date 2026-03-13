@@ -1,60 +1,109 @@
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Twitter, Instagram, ArrowUpRight } from "lucide-react";
 import lettzoLogo from "@/assets/lettzo-logo.png";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const links = [
+    { label: "Community", href: "#", external: true },
+    { label: "Safety Guide", href: "#", external: false },
+    { label: "Privacy Policy", href: "#", external: false },
+    { label: "Terms of Service", href: "#", external: false },
+  ];
+
   return (
-    <footer id="contact" className="bg-foreground text-background py-20 md:py-32">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          {/* Logo */}
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2Ffb7ff9279a904877a95359181d759227%2F85f624f36a4c4dc69073e5fead9c780a"
-            alt="Lettzo"
-            className="h-16 md:h-20 w-auto mb-12 opacity-100"
-          />
+    <footer id="contact" className="relative pt-24 pb-12 overflow-hidden border-t border-white/5">
+      {/* Background ambient light */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-primary/5 blur-[120px] pointer-events-none" />
 
-          <h3 className="font-satoshi text-3xl md:text-4xl font-black mb-8 italic">
-            Let's build the future of <br />social spontaneous meetups.
-          </h3>
-
-          <p className="text-xl text-background/60 font-medium mb-12 max-w-xl">
-            Have questions or want to collaborate? <br />
-            Reach out to us directly through the channels below.
-          </p>
-
-          {/* Contact Block */}
-          <div className="flex flex-col sm:flex-row gap-6 mb-20 w-full justify-center">
-            <a
-              href="mailto:asad@lettzo.com"
-              className="flex items-center justify-center gap-4 bg-background/10 hover:bg-background/20 py-8 px-10 rounded-[2.5rem] transition-all group min-w-[280px] border border-background/5"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
-                <Mail className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-500" />
-              </div>
-              <span className="font-bold text-xl tracking-tight">asad@lettzo.com</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/asad-siddiqui-6559a72a1/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-4 bg-background/10 hover:bg-background/20 py-8 px-10 rounded-[2.5rem] transition-all group min-w-[280px] border border-background/5"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500 transition-colors duration-500">
-                <Linkedin className="w-6 h-6 text-blue-400 group-hover:text-white transition-colors duration-500" />
-              </div>
-              <span className="font-bold text-xl tracking-tight">Asad Siddiqui</span>
-            </a>
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+          
+          {/* Brand Column */}
+          <div className="space-y-6 col-span-1 lg:col-span-1">
+            <img
+              src={lettzoLogo}
+              alt="Lettzo"
+              className="h-10 md:h-12 w-auto brightness-[1.1]"
+            />
+            <p className="text-sm font-medium text-foreground/50 leading-relaxed max-w-xs">
+              Stop scrolling. Start doing. The premium social meetup platform designed for real-world connections.
+            </p>
+            <div className="flex items-center gap-4">
+              <a href="#" className="p-2 rounded-xl glass hover:bg-white/10 transition-all text-foreground/60 hover:text-primary">
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a href="#" className="p-2 rounded-xl glass hover:bg-white/10 transition-all text-foreground/60 hover:text-primary">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href="https://www.linkedin.com/in/asad-siddiqui-6559a72a1/" target="_blank" className="p-2 rounded-xl glass hover:bg-white/10 transition-all text-foreground/60 hover:text-primary">
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
-          {/* Bottom */}
-          <div className="w-full pt-12 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-6 opacity-40">
-            <p className="text-sm font-bold tracking-tight">
-              © {new Date().getFullYear()} Lettzo. Built for the spontaneous.
-            </p>
-            <div className="flex gap-8 text-xs font-black tracking-[0.2em] uppercase">
-              <span>Not a dating app.</span>
-              <span>Socially driven.</span>
+          {/* Contact Block */}
+          <div className="col-span-1 lg:col-span-2 flex flex-col items-center md:items-start">
+             <h4 className="font-satoshi text-lg font-bold mb-6">Let's build the future together.</h4>
+             <div className="flex flex-col sm:flex-row gap-4 w-full">
+                <a
+                  href="mailto:asad@lettzo.com"
+                  className="flex items-center gap-4 glass-card p-5 rounded-2xl border border-white/8 transition-all hover:border-primary/30 group flex-1"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Mail className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest font-black text-foreground/30">Email Us</span>
+                    <span className="text-sm font-bold text-foreground/80">asad@lettzo.com</span>
+                  </div>
+                  <ArrowUpRight className="ml-auto w-4 h-4 text-foreground/20 group-hover:text-primary transition-colors" />
+                </a>
+                
+                <a
+                  href="https://www.linkedin.com/in/asad-siddiqui-6559a72a1/"
+                  target="_blank"
+                  className="flex items-center gap-4 glass-card p-5 rounded-2xl border border-white/8 transition-all hover:border-blue-500/30 group flex-1"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Linkedin className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest font-black text-foreground/30">Founder</span>
+                    <span className="text-sm font-bold text-foreground/80">Asad Siddiqui</span>
+                  </div>
+                  <ArrowUpRight className="ml-auto w-4 h-4 text-foreground/20 group-hover:text-blue-400 transition-colors" />
+                </a>
+             </div>
+          </div>
+
+          {/* Links Column */}
+          <div className="flex flex-col md:items-end">
+            <h4 className="font-satoshi text-lg font-bold mb-6">Quick Links</h4>
+            <div className="flex flex-col gap-3 md:text-right">
+              {links.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm font-medium text-foreground/45 hover:text-primary transition-colors flex items-center gap-1 md:justify-end"
+                >
+                  {link.label}
+                  {link.external && <ArrowUpRight className="w-3 h-3 opacity-50" />}
+                </a>
+              ))}
             </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-12 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <p className="text-xs font-medium text-foreground/30">
+            © {currentYear} Lettzo. Built for the spontaneous.
+          </p>
+          <div className="flex items-center gap-8">
+            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-foreground/25">Not a dating app</span>
+            <div className="h-4 w-px bg-white/5" />
+            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-foreground/25">Socially driven</span>
           </div>
         </div>
       </div>

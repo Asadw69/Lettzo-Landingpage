@@ -1,121 +1,162 @@
-import { ArrowRight, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-friends.jpg";
+import { ArrowRight, MapPin, Sparkles } from "lucide-react";
 import lettzoLogo from "@/assets/lettzo-logo.png";
+import heroImage from "@/assets/hero-friends.jpg";
 
 interface HeroSectionProps {
   onOpenModal: () => void;
 }
 
 const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
-  return (
-    <section className="relative min-h-screen flex items-center pt-24 md:pt-32 overflow-hidden bg-white">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-4 sm:px-6 py-12 md:py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="flex flex-col gap-6 md:gap-8 text-center lg:text-left">
-            {/* Direct Logo Placement */}
-            <div className="flex justify-center lg:justify-start mb-2 animate-fade-in">
+
+  return (
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* ── Background layers ── */}
+      {/* Deep ambient glow */}
+      <div className="absolute top-[-20%] left-[10%] w-[700px] h-[700px] rounded-full bg-primary/8 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[5%] w-[500px] h-[500px] rounded-full bg-purple-600/6 blur-[100px] pointer-events-none" />
+      <div className="absolute top-[30%] right-[25%] w-[300px] h-[300px] rounded-full bg-primary/5 blur-[80px] pointer-events-none" />
+
+      {/* Grid pattern overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
+          backgroundSize: "64px 64px",
+        }}
+      />
+
+      {/* Radial vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,transparent_30%,hsl(var(--background))_100%)] pointer-events-none" />
+
+      <div className="container mx-auto px-4 sm:px-6 py-16 md:py-24 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+
+          {/* ── Left Content ── */}
+          <div className="flex flex-col gap-7 text-center lg:text-left">
+
+            {/* Logo */}
+            <div className="flex justify-center lg:justify-start animate-fade-in">
               <img
                 src={lettzoLogo}
                 alt="Lettzo"
-                className="h-16 md:h-24 w-auto object-contain"
+                className="h-14 md:h-18 w-auto object-contain brightness-[1.1]"
               />
             </div>
 
-            {/* Badge */}
-            <div className="inline-flex justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wide uppercase">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                The Social Meetup App
+            {/* Pill badge */}
+            <div
+              className="inline-flex justify-center lg:justify-start animate-fade-in"
+              style={{ animationDelay: "0.1s", opacity: 0 }}
+            >
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm font-semibold tracking-wide text-foreground/80 border border-white/10">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+                </span>
+                <Sparkles className="w-3.5 h-3.5 text-primary" />
+                The Social Meetup App — 2026
               </span>
             </div>
 
             {/* Headline */}
-            <h1
-              className="font-satoshi text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground animate-fade-in leading-[1.1]"
-              style={{ animationDelay: "0.2s" }}
+            <div
+              className="space-y-2 animate-fade-in"
+              style={{ animationDelay: "0.2s", opacity: 0 }}
             >
-              Stop Doing{" "}
-              <span className="text-primary italic">
-                Things
-              </span>{" "}
-              Alone.
-            </h1>
+              <h1 className="font-satoshi text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[1.05]">
+                Stop Doing{" "}
+                <span className="text-gradient">Things</span>{" "}
+                <br className="hidden sm:block" />
+                Alone.
+              </h1>
+            </div>
 
             {/* Subtext */}
-            <div className="space-y-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <p className="text-xl md:text-2xl font-medium text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Coffee runs. Gym sessions. Movie nights. Travel adventures.
-                Find people who want to do the same things—right now.
+            <div
+              className="space-y-4 animate-fade-in"
+              style={{ animationDelay: "0.3s", opacity: 0 }}
+            >
+              <p className="text-lg md:text-xl font-medium text-foreground/60 max-w-md mx-auto lg:mx-0 leading-relaxed">
+                Whatever you're in the mood for — find people ready to join.
+                Coffee, gym, movies, travel, and more.
               </p>
-              <p className="text-sm font-bold text-primary/60 uppercase tracking-widest bg-primary/5 w-fit px-3 py-1 rounded-md mx-auto lg:mx-0">
+              <p className="text-xs font-bold text-primary/70 uppercase tracking-[0.2em] bg-primary/8 w-fit px-3 py-1.5 rounded-lg border border-primary/15 mx-auto lg:mx-0">
                 Not a dating app. Just real plans.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in mt-2"
-              style={{ animationDelay: "0.4s" }}
+              className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start animate-fade-in"
+              style={{ animationDelay: "0.4s", opacity: 0 }}
             >
-              <Button
-                size="lg"
+              {/* Primary CTA */}
+              <button
                 onClick={onOpenModal}
-                className="shadow-button hover:shadow-lg transition-all duration-300 hover:scale-105 text-lg font-bold px-10 py-7 rounded-full"
+                className="group relative inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl text-base font-bold text-white overflow-hidden transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
               >
-                Start a Plan
-                <ArrowRight className="ml-2 h-6 w-6" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
+                <span className="absolute inset-0 btn-shimmer" />
+                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl bg-primary/50" />
+                <span className="relative">Join the Waitlist</span>
+                <ArrowRight className="relative w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </button>
+
+              {/* Secondary CTA */}
+              <button
                 onClick={onOpenModal}
-                className="transition-all duration-300 hover:bg-secondary text-lg font-bold px-10 py-7 rounded-full border-2"
+                className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl text-base font-bold glass border border-white/10 text-foreground/80 hover:text-foreground transition-all duration-300 hover:bg-white/8 hover:border-white/20"
               >
-                <MapPin className="mr-2 h-6 w-6" />
+                <MapPin className="w-5 h-5 text-primary" />
                 Explore Nearby
-              </Button>
+              </button>
             </div>
+
+
           </div>
 
-          {/* Right Content / Image integration */}
+          {/* ── Right Content / Hero Image ── */}
           <div
             className="relative animate-fade-in lg:animate-slide-in-right"
-            style={{ animationDelay: "0.3s" }}
+            style={{ animationDelay: "0.3s", opacity: 0 }}
           >
-            <div className="relative aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
+            {/* Glow backdrop */}
+            <div className="absolute inset-8 bg-primary/15 rounded-[2.5rem] blur-3xl pointer-events-none animate-glow-pulse" />
+
+            {/* Card wrapper */}
+            <div className="relative aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[2.5rem] overflow-hidden glass-card">
               <img
                 src={heroImage}
                 alt="Friends hanging out together"
-                className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover"
               />
-              {/* Subtle integrated Logo */}
-              <div className="absolute top-8 right-8 mix-blend-overlay opacity-30 select-none pointer-events-none">
-                <img src={lettzoLogo} alt="" className="w-32 h-auto" />
+
+              {/* Bottom gradient overlay */}
+              <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+              {/* Bottom label */}
+              <div className="absolute bottom-8 left-8 right-8">
+                <p className="font-satoshi text-white text-2xl font-bold mb-0.5">Real Connections</p>
+                <p className="text-white/60 text-sm font-medium">Spontaneous & real-life plans</p>
               </div>
 
-              {/* Bottom linear gradient */}
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
-
-              {/* Floating lifestyle label */}
-              <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end">
-                <div className="text-white">
-                  <p className="font-satoshi text-2xl font-bold">Real Connections</p>
-                  <p className="text-sm opacity-80 font-medium">Spontaneous & Real-life plans</p>
+              {/* Glass tag top-right */}
+              <div className="absolute top-5 right-5">
+                <div className="glass px-3 py-1.5 rounded-xl border border-white/10 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-xs font-semibold text-white/80">Live now</span>
                 </div>
               </div>
             </div>
 
-            {/* Decorative Floating Elements - simplified */}
-            <div className="absolute -top-10 -left-10 w-24 h-24 bg-primary rounded-full blur-2xl opacity-20 animate-pulse" />
-            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary-foreground border border-primary/20 rounded-full flex items-center justify-center animate-float shadow-xl px-4 text-center">
-              <span className="text-xs font-black text-primary uppercase">No more<br />swiping.</span>
+            {/* Floating decorative card */}
+            <div className="absolute -bottom-5 -left-5 glass-card rounded-2xl px-4 py-3 border border-white/8 animate-float shadow-card">
+              <p className="text-xs font-bold text-foreground/50 uppercase tracking-widest mb-0.5">No more</p>
+              <p className="text-sm font-black text-gradient">swiping.</p>
             </div>
+
+            {/* Floating orb accent */}
+            <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-primary/20 blur-2xl animate-pulse pointer-events-none" />
           </div>
         </div>
       </div>
