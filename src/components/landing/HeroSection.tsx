@@ -1,6 +1,7 @@
 import { ArrowRight, MapPin, Sparkles } from "lucide-react";
 import lettzoLogo from "@/assets/lettzo-logo.png";
 import heroImage from "@/assets/hero-friends.jpg";
+import { RejectedBadges } from "./RejectedBadges";
 
 interface HeroSectionProps {
   onOpenModal: () => void;
@@ -33,7 +34,12 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
           {/* ── Left Content ── */}
-          <div className="flex flex-col gap-7 text-center lg:text-left">
+          <div className="flex flex-col gap-7 text-center lg:text-left pt-4">
+            
+            {/* Social Proof / Rejected Badges */}
+            <div className="flex justify-center lg:justify-start mb-2">
+              <RejectedBadges />
+            </div>
 
             {/* Logo */}
             <div className="flex justify-center lg:justify-start animate-fade-in">
@@ -112,8 +118,8 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
               </button>
             </div>
 
-
           </div>
+
 
           {/* ── Right Content / Hero Image ── */}
           <div
