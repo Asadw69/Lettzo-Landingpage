@@ -15,16 +15,12 @@ const features: Feature[] = [
   {
     icon: Zap,
     title: "Spontaneous Meetups",
-<<<<<<< HEAD
     description: "Got an hour for coffee or a quick gym session? Create a plan and find someone to join you instantly. No more waiting for 'someday'.",
     className: "md:col-span-2 md:row-span-2",
     iconBg: "bg-amber-400/10",
     iconColor: "text-amber-400",
     glowColor: "rgba(251, 191, 36, 0.15)",
     badge: "Life-changing",
-=======
-    description: "Got an hour for coffee or a quick gym session ? Create a plan and find someone to join you instantly.",
->>>>>>> 9d2576b2b866af65441eee2be9ce90e287131f9e
   },
   {
     icon: Map,
@@ -86,18 +82,10 @@ const features: Feature[] = [
     icon: Users,
     title: "Strictly Social",
     description: "Designed for shared activities and real hobbies. We're here for connections, not dating.",
-<<<<<<< HEAD
     className: "md:col-span-1",
     iconBg: "bg-emerald-400/10",
     iconColor: "text-emerald-400",
     glowColor: "rgba(52, 211, 153, 0.15)",
-=======
-  },
-  {
-    icon: Tag,
-    title: "Vibe Matching",
-    description: "Find people who match your vibe.",
->>>>>>> 9d2576b2b866af65441eee2be9ce90e287131f9e
   },
 ];
 
