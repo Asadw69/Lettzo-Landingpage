@@ -15,16 +15,10 @@ interface AboutModalProps {
 const AboutModal = ({ isOpen, onClose }: AboutModalProps) => {
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-lg glass-card border-white/10 rounded-[2.5rem] p-0 overflow-hidden">
-                {/* Hero Gradient Header */}
-                <div className="relative h-32 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.1)_0%,transparent_70%)]" />
-                    <div className="relative w-16 h-16 rounded-2xl glass border border-white/20 flex items-center justify-center animate-glow-pulse">
-                        <Info className="w-8 h-8 text-primary shadow-glow" />
-                    </div>
-                </div>
+            <DialogContent className="w-[calc(100%-2rem)] max-w-lg glass-card border-white/10 rounded-[2.5rem] p-0 overflow-hidden max-h-[90vh] flex flex-col">
 
-                <div className="p-8 space-y-8">
+
+                <div className="p-6 sm:p-8 space-y-6 sm:space-y-8 overflow-y-auto flex-1 scrollbar-hide">
                     <DialogHeader className="text-center">
                         <DialogTitle className="font-satoshi text-3xl font-black mb-4">
                             About <span className="text-gradient">Lettzo</span>

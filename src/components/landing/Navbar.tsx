@@ -28,13 +28,13 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
         scrolled
           ? "py-2"
           : "py-3"
-      }`}
+      } ${isMobileMenuOpen ? "glass" : ""}`}
     >
       {/* Floating pill container */}
       <div className="container mx-auto px-4 sm:px-6">
         <div
           className={`mx-auto transition-all duration-500 ${
-            scrolled
+            scrolled || isMobileMenuOpen
               ? "max-w-4xl glass rounded-2xl px-4 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
               : "max-w-full px-0"
           }`}

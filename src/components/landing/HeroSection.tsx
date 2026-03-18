@@ -56,10 +56,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
               style={{ animationDelay: "0.1s", opacity: 0 }}
             >
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm font-semibold tracking-wide text-foreground/80 border border-white/10">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-                </span>
+
                 <Sparkles className="w-3.5 h-3.5 text-primary" />
                 The Social Meetup App — 2026
               </span>
