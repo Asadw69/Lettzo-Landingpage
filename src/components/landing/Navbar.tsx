@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Zap } from "lucide-react";
 import lettzoLogo from "@/assets/lettzo-logo.png";
+import { Link, useLocation } from "react-router-dom";
 
 interface NavbarProps {
   onOpenModal: () => void;
@@ -10,6 +11,8 @@ interface NavbarProps {
 const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
@@ -18,36 +21,33 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
   }, []);
 
   const navLinks = [
-    { label: "Features", href: "#features" },
-    { label: "How it Works", href: "#how-it-works" },
+    { label: "Features", href: isHomePage ? "#features" : "/#features" },
+    { label: "How it Works", href: isHomePage ? "#how-it-works" : "/#how-it-works" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "py-2"
-          : "py-3"
-      } ${isMobileMenuOpen ? "glass" : ""}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
+        scrolled ? "py-2" : "py-3"
+      }`}
     >
-      {/* Floating pill container */}
       <div className="container mx-auto px-4 sm:px-6">
         <div
-          className={`mx-auto transition-all duration-500 ${
+          className={`mx-auto transition-all duration-400 ${
             scrolled || isMobileMenuOpen
-              ? "max-w-4xl glass rounded-2xl px-4 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+              ? "max-w-4xl bg-white/10 backdrop-blur-md md:rounded-full rounded-[2rem] px-5 border border-white/20 shadow-sm"
               : "max-w-full px-0"
           }`}
         >
           <div className="flex items-center justify-between h-14 md:h-16">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2 group transition-all duration-300 flex-shrink-0">
+            <Link to="/" className="flex items-center gap-2 group transition-all duration-300 flex-shrink-0">
               <img
                 src={lettzoLogo}
                 alt="Lettzo"
-                className="h-8 md:h-10 w-auto object-contain transition-all duration-300 group-hover:brightness-110"
+                className="h-8 md:h-10 w-auto object-contain transition-all duration-300"
               />
-            </a>
+            </Link>
 
             {/* Desktop Nav Links */}
             <div className="hidden md:flex items-center gap-1">
@@ -55,7 +55,7 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="relative text-sm font-medium text-foreground/60 hover:text-foreground transition-colors duration-200 px-4 py-2 rounded-xl hover:bg-white/5 group"
+                  className="relative text-sm font-medium text-foreground/60 hover:text-foreground transition-colors duration-200 px-4 py-2 rounded-full hover:bg-white/40 group"
                 >
                   {link.label}
                   <span className="absolute inset-x-3 bottom-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -63,7 +63,7 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
               ))}
               <button
                 onClick={onOpenAbout}
-                className="relative text-sm font-medium text-foreground/60 hover:text-foreground transition-colors duration-200 px-4 py-2 rounded-xl hover:bg-white/5 group"
+                className="relative text-sm font-medium text-foreground/60 hover:text-foreground transition-colors duration-200 px-4 py-2 rounded-full hover:bg-white/40 group"
               >
                 About
                 <span className="absolute inset-x-3 bottom-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -74,12 +74,10 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
             <div className="hidden md:flex items-center gap-3">
               <button
                 onClick={onOpenModal}
-                className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white overflow-hidden group transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white overflow-hidden group transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-button"
               >
-                {/* Gradient background */}
-                <span className="absolute inset-0 btn-shimmer rounded-xl" />
-                {/* Glow */}
-                <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md bg-primary/40" />
+                <span className="absolute inset-0 btn-shimmer rounded-full" />
+                <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary/10" />
                 <Zap className="relative w-4 h-4" />
                 <span className="relative">Join Waitlist</span>
               </button>
@@ -87,7 +85,7 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="md:hidden p-2 rounded-xl text-foreground/80 hover:text-foreground hover:bg-white/5 transition-all"
+              className="md:hidden p-2 rounded-full text-foreground/70 hover:text-foreground hover:bg-white/40 transition-all"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -97,12 +95,12 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
 
           {/* Mobile Nav */}
           {isMobileMenuOpen && (
-            <div className="md:hidden border-t border-white/5 py-4 flex flex-col gap-1 animate-fade-in">
+            <div className="md:hidden border-t border-white/10 py-6 px-2 flex flex-col gap-2 animate-fade-in">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors py-3 px-2 rounded-xl hover:bg-white/5"
+                  className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors py-3 px-4 rounded-2xl hover:bg-white/10"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -110,16 +108,16 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
               ))}
               <button
                 onClick={() => { setIsMobileMenuOpen(false); onOpenAbout(); }}
-                className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors py-3 px-2 rounded-xl hover:bg-white/5 text-left"
+                className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors py-3 px-4 rounded-2xl hover:bg-white/10 text-left"
               >
                 About
               </button>
               <button
                 onClick={() => { setIsMobileMenuOpen(false); onOpenModal(); }}
-                className="relative mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white overflow-hidden"
+                className="relative mt-4 inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-base font-bold text-white overflow-hidden shadow-button"
               >
-                <span className="absolute inset-0 btn-shimmer rounded-xl" />
-                <Zap className="relative w-4 h-4" />
+                <span className="absolute inset-0 btn-shimmer" />
+                <Zap className="relative w-5 h-5" />
                 <span className="relative">Join Waitlist</span>
               </button>
             </div>

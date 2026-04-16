@@ -2,60 +2,71 @@ import React from "react";
 import ycLogo from "@/assets/y-combinator_thumb.png";
 import spcLogo from "@/assets/SouthPark.png";
 import hf0Logo from "@/assets/hf0.png";
-import { cn } from "@/lib/utils";
 
-interface BadgeProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-const Badge = ({ children, className }: BadgeProps) => {
-  return (
-    <div
-      className={cn(
-        "inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs md:text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.03] hover:brightness-110 cursor-default animate-fade-in group",
-        "backdrop-blur-xl border shadow-lg",
-        "bg-white/[0.08] border-white/15 dark:bg-white/[0.05] dark:border-white/10",
-        "text-foreground/80 hover:text-foreground",
-        className
-      )}
-      style={{
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.1)",
-        fontFamily: "'Inter', sans-serif",
-      }}
-    >
-      {children}
-    </div>
-  );
-};
+const badges = [
+  {
+    logo: ycLogo,
+    name: "Y Combinator",
+    nameColor: "text-orange-500",
+    logoBg: "bg-orange-50",
+    logoBorder: "border-orange-100",
+    alt: "YC",
+    invert: false,
+  },
+  {
+    logo: spcLogo,
+    name: "South Park Commons",
+    nameColor: "text-foreground/75",
+    logoBg: "bg-gray-50",
+    logoBorder: "border-gray-100",
+    alt: "SPC",
+    invert: false,
+  },
+  {
+    logo: hf0Logo,
+    name: "HF0",
+    nameColor: "text-foreground/75",
+    logoBg: "bg-gray-50",
+    logoBorder: "border-gray-100",
+    alt: "HF0",
+    invert: false,
+  },
+];
 
 export const RejectedBadges = () => {
   return (
-    <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-      {/* YC Badge */}
-      <Badge>
-        <span className="opacity-80">Rejected by</span>
-        <img src={ycLogo} alt="YC" className="w-5 h-5 object-contain" />
-        <span className="font-semibold text-orange-500/90">Combinator</span>
-      </Badge>
+    <div className="flex flex-wrap items-center justify-center gap-3">
+      {badges.map((b) => (
+        <div
+          key={b.name}
+          className="group flex items-center justify-center h-10 gap-2.5 px-4 rounded-full border border-black/[0.08] shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all duration-300 hover:scale-[1.02] hover:border-primary/20 hover:bg-white/60"
+          style={{ 
+            fontFamily: "'Inter', sans-serif",
+            background: "rgba(255, 255, 255, 0.45)",
+            backdropFilter: "blur(12px) saturate(160%)",
+            WebkitBackdropFilter: "blur(12px) saturate(160%)"
+          }}
+        >
+          {/* "Rejected by" text — subtle and professional */}
+          <span className="text-[11px] font-bold text-black/80 tracking-tight">
+            Rejected by
+          </span>
 
-      {/* SPC Badge */}
-      <Badge>
-        <span className="opacity-80">Rejected by</span>
-        <span className="font-semibold">South Park Commons</span>
-        <img 
-          src={spcLogo} 
-          alt="SPC" 
-          className="w-5 h-5 object-contain dark:invert" 
-        />
-      </Badge>
+          {/* Logo — small and clean */}
+          <div className="flex items-center justify-center w-5 h-5 rounded-md flex-shrink-0">
+            <img
+              src={b.logo}
+              alt={b.alt}
+              className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+            />
+          </div>
 
-      {/* HF0 Badge */}
-      <Badge>
-        <span className="opacity-80">Rejected by</span>
-        <img src={hf0Logo} alt="HF0" className="w-5 h-5 object-contain rounded-full" />
-        <span className="font-semibold">HF0</span>
-      </Badge>
+          {/* Name */}
+          <span className={`text-[12px] font-bold ${b.nameColor} tracking-tight opacity-90 group-hover:opacity-100`}>
+            {b.name === "South Park Commons" ? "SPC" : (b.name === "Y Combinator" ? "YC" : b.name)}
+          </span>
+        </div>
+      ))}
     </div>
   );
 };

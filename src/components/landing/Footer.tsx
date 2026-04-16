@@ -7,36 +7,36 @@ const Footer = () => {
   const links = [
     { label: "Community", href: "#", external: true },
     { label: "Safety Guide", href: "#", external: false },
-    { label: "Privacy Policy", href: "#", external: false },
-    { label: "Terms of Service", href: "#", external: false },
+    { label: "Privacy Policy", href: "/privacy", external: false },
+    { label: "Terms of Service", href: "/terms", external: false },
   ];
 
   return (
-    <footer id="contact" className="relative pt-24 pb-12 overflow-hidden border-t border-white/5">
-      {/* Background ambient light */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-primary/5 blur-[120px] pointer-events-none" />
+    <footer id="contact" className="relative pt-20 pb-10 overflow-hidden bg-[#FAFAFA] border-t border-[#EAEAEA]">
+      {/* Background tint */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-primary/3 blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
           {/* Brand Column */}
           <div className="space-y-6 col-span-1 lg:col-span-1">
             <img
               src={lettzoLogo}
               alt="Lettzo"
-              className="h-10 md:h-12 w-auto brightness-[1.1]"
+              className="h-10 md:h-12 w-auto"
             />
             <p className="text-sm font-medium text-foreground/50 leading-relaxed max-w-xs">
-              Stop scrolling. Start doing. The premium social meetup platform designed for real-world connections.
+              Stop scrolling. Start doing. The social meetup platform designed for real-world connections.
             </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="p-2 rounded-xl glass hover:bg-white/10 transition-all text-foreground/60 hover:text-primary">
+            <div className="flex items-center gap-3">
+              <a href="#" className="p-2 rounded-xl bg-white border border-[#EAEAEA] hover:border-primary/20 hover:bg-[#FFF5F5] transition-all text-foreground/50 hover:text-primary shadow-sm">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2 rounded-xl glass hover:bg-white/10 transition-all text-foreground/60 hover:text-primary">
+              <a href="#" className="p-2 rounded-xl bg-white border border-[#EAEAEA] hover:border-primary/20 hover:bg-[#FFF5F5] transition-all text-foreground/50 hover:text-primary shadow-sm">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://www.linkedin.com/in/asad-siddiqui-6559a72a1/" target="_blank" className="p-2 rounded-xl glass hover:bg-white/10 transition-all text-foreground/60 hover:text-primary">
+              <a href="https://www.linkedin.com/in/asad-siddiqui-6559a72a1/" target="_blank" className="p-2 rounded-xl bg-white border border-[#EAEAEA] hover:border-primary/20 hover:bg-[#FFF5F5] transition-all text-foreground/50 hover:text-primary shadow-sm">
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
@@ -44,42 +44,42 @@ const Footer = () => {
 
           {/* Contact Block */}
           <div className="col-span-1 lg:col-span-2 flex flex-col items-center md:items-start">
-             <h4 className="font-satoshi text-lg font-bold mb-6">Let's build the future together.</h4>
-             <div className="flex flex-col sm:flex-row gap-4 w-full">
-                <a
-                  href="mailto:asad@lettzo.com"
-                  className="flex items-center gap-4 glass-card p-5 rounded-2xl border border-white/8 transition-all hover:border-primary/30 group flex-1"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Mail className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] uppercase tracking-widest font-black text-foreground/30">Email Us</span>
-                    <span className="text-sm font-bold text-foreground/80">asad@lettzo.com</span>
-                  </div>
-                  <ArrowUpRight className="ml-auto w-4 h-4 text-foreground/20 group-hover:text-primary transition-colors" />
-                </a>
-                
-                <a
-                  href="https://www.linkedin.com/in/asad-siddiqui-6559a72a1/"
-                  target="_blank"
-                  className="flex items-center gap-4 glass-card p-5 rounded-2xl border border-white/8 transition-all hover:border-blue-500/30 group flex-1"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Linkedin className="w-5 h-5 text-blue-400" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] uppercase tracking-widest font-black text-foreground/30">Founder</span>
-                    <span className="text-sm font-bold text-foreground/80">Asad Siddiqui</span>
-                  </div>
-                  <ArrowUpRight className="ml-auto w-4 h-4 text-foreground/20 group-hover:text-blue-400 transition-colors" />
-                </a>
-             </div>
+            <h4 className="font-fraunces text-lg font-bold mb-6 text-foreground">Let's build the future together.</h4>
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <a
+                href="mailto:asad@lettzo.com"
+                className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#EAEAEA] transition-all hover:border-primary/25 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] group flex-1"
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Mail className="w-5 h-5 text-primary" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] uppercase tracking-widest font-black text-foreground/30">Email Us</span>
+                  <span className="text-sm font-bold text-foreground/80">asad@lettzo.com</span>
+                </div>
+                <ArrowUpRight className="ml-auto w-4 h-4 text-foreground/20 group-hover:text-primary transition-colors" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/asad-siddiqui-6559a72a1/"
+                target="_blank"
+                className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#EAEAEA] transition-all hover:border-blue-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] group flex-1"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Linkedin className="w-5 h-5 text-blue-500" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] uppercase tracking-widest font-black text-foreground/30">Founder</span>
+                  <span className="text-sm font-bold text-foreground/80">Asad Siddiqui</span>
+                </div>
+                <ArrowUpRight className="ml-auto w-4 h-4 text-foreground/20 group-hover:text-blue-400 transition-colors" />
+              </a>
+            </div>
           </div>
 
           {/* Links Column */}
           <div className="flex flex-col md:items-end">
-            <h4 className="font-satoshi text-lg font-bold mb-6">Quick Links</h4>
+            <h4 className="font-fraunces text-lg font-bold mb-6 text-foreground">Quick Links</h4>
             <div className="flex flex-col gap-3 md:text-right">
               {links.map((link) => (
                 <a
@@ -96,13 +96,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
+        <div className="pt-8 border-t border-[#EAEAEA] flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs font-medium text-foreground/30">
             © {currentYear} Lettzo. Built for the spontaneous.
           </p>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6">
             <span className="text-[10px] font-black tracking-[0.2em] uppercase text-foreground/25">Not a dating app</span>
-            <div className="h-4 w-px bg-white/5" />
+            <div className="h-3 w-px bg-[#EAEAEA]" />
             <span className="text-[10px] font-black tracking-[0.2em] uppercase text-foreground/25">Socially driven</span>
           </div>
         </div>

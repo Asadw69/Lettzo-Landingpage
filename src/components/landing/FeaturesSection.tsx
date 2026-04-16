@@ -1,4 +1,5 @@
 import { Zap, Map, MessageCircle, Users, Tag, Sparkles, TrendingUp, ShieldCheck, Brain, Video, Calendar } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 interface Feature {
   icon: any;
@@ -7,7 +8,7 @@ interface Feature {
   className: string;
   iconBg: string;
   iconColor: string;
-  glowColor: string;
+  accentColor: string;
   badge?: string;
 }
 
@@ -16,10 +17,10 @@ const features: Feature[] = [
     icon: Zap,
     title: "Spontaneous Meetups",
     description: "Got an hour for coffee or a quick gym session? Create a plan and find someone to join you instantly. No more waiting for 'someday'.",
-    className: "md:col-span-2 md:row-span-2",
-    iconBg: "bg-amber-400/10",
-    iconColor: "text-amber-400",
-    glowColor: "rgba(251, 191, 36, 0.15)",
+    className: "md:col-span-2",
+    iconBg: "bg-amber-50",
+    iconColor: "text-amber-500",
+    accentColor: "hover:border-amber-200",
     badge: "Life-changing",
   },
   {
@@ -27,27 +28,27 @@ const features: Feature[] = [
     title: "Live Discovery",
     description: "See what's happening around you in real-time.",
     className: "md:col-span-1",
-    iconBg: "bg-cyan-400/10",
-    iconColor: "text-cyan-400",
-    glowColor: "rgba(34, 211, 238, 0.15)",
+    iconBg: "bg-cyan-50",
+    iconColor: "text-cyan-500",
+    accentColor: "hover:border-cyan-200",
   },
   {
     icon: MessageCircle,
     title: "Plan Chats",
     description: "Dedicated spaces for every meetup.",
     className: "md:col-span-1",
-    iconBg: "bg-violet-400/10",
-    iconColor: "text-violet-400",
-    glowColor: "rgba(167, 139, 250, 0.15)",
+    iconBg: "bg-violet-50",
+    iconColor: "text-violet-500",
+    accentColor: "hover:border-violet-200",
   },
   {
     icon: Brain,
     title: "AI Vibe Match",
     description: "Our intelligence understands your mood and interests to suggest the perfect meetup. It doesn't just match keywords; it matches human connection.",
     className: "md:col-span-1",
-    iconBg: "bg-primary/10",
+    iconBg: "bg-rose-50",
     iconColor: "text-primary",
-    glowColor: "rgba(239, 68, 68, 0.15)",
+    accentColor: "hover:border-rose-200",
     badge: "Smart",
   },
   {
@@ -55,129 +56,155 @@ const features: Feature[] = [
     title: "Virtual Hangouts",
     description: "Can't make it in person? Bridge the distance with high-fidelity social rooms.",
     className: "md:col-span-1",
-    iconBg: "bg-blue-400/10",
-    iconColor: "text-blue-400",
-    glowColor: "rgba(96, 165, 250, 0.15)",
-  },
-  {
-    icon: Tag,
-    title: "Vibe Matching",
-    description: "Find people on your precise wavelength.",
-    className: "md:col-span-1",
-    iconBg: "bg-pink-400/10",
-    iconColor: "text-pink-400",
-    glowColor: "rgba(244, 114, 182, 0.15)",
+    iconBg: "bg-blue-50",
+    iconColor: "text-blue-500",
+    accentColor: "hover:border-blue-200",
   },
   {
     icon: Calendar,
     title: "Seamless Hosting",
     description: "From 2-person coffee chats to 50-person hikes. Automated RSVP tracking, waitlists, and venue sorting make coordination effortless.",
     className: "md:col-span-2",
-    iconBg: "bg-orange-400/10",
-    iconColor: "text-orange-400",
-    glowColor: "rgba(251, 146, 60, 0.15)",
+    iconBg: "bg-orange-50",
+    iconColor: "text-orange-500",
+    accentColor: "hover:border-orange-200",
     badge: "Pro Tools",
+  },
+  {
+    icon: Tag,
+    title: "Vibe Matching",
+    description: "Find people on your precise wavelength.",
+    className: "md:col-span-1",
+    iconBg: "bg-pink-50",
+    iconColor: "text-pink-500",
+    accentColor: "hover:border-pink-200",
   },
   {
     icon: Users,
     title: "Strictly Social",
     description: "Designed for shared activities and real hobbies. We're here for connections, not dating.",
-    className: "md:col-span-1",
-    iconBg: "bg-emerald-400/10",
-    iconColor: "text-emerald-400",
-    glowColor: "rgba(52, 211, 153, 0.15)",
+    className: "md:col-span-3",
+    iconBg: "bg-emerald-50",
+    iconColor: "text-emerald-500",
+    accentColor: "hover:border-emerald-200",
   },
 ];
 
 const FeaturesSection = () => {
-  return (
-    <section id="features" className="py-24 md:py-40 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none" />
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
+    );
+    const items = sectionRef.current?.querySelectorAll(".reveal-item");
+    items?.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="features" className="py-24 md:py-40 relative overflow-hidden bg-[#FF002F]">
+
+
+      <div ref={sectionRef} className="container mx-auto px-4 sm:px-6 relative z-10">
+
         {/* Header Section */}
-        <div className="max-w-4xl mb-16 md:mb-24 animate-fade-in group text-center mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-white/10 text-[10px] uppercase tracking-[0.2em] font-black text-primary mb-6">
-            <TrendingUp className="w-3 h-3" />
+        <div className="reveal-item max-w-4xl mb-16 md:mb-24 text-center mx-auto opacity-0 translate-y-8 transition-all duration-700 ease-out [&.in-view]:opacity-100 [&.in-view]:translate-y-0">
+          <div className="pill-badge text-white border-white/20 bg-white/10 mx-auto w-fit mb-6">
+            <TrendingUp className="w-3 h-3 text-white" />
             Designed for connection
           </div>
-          <h2 className="font-satoshi text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-[1.1] tracking-tight">
+          <h2 className="font-fraunces text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-[1.1] tracking-tight text-white">
             The platform that <br />
-            <span className="text-gradient">actually works.</span>
+            <span className="text-white/90 hover:italic transition-all px-2">actually works.</span>
           </h2>
-          <p className="text-lg md:text-xl text-foreground/50 font-medium max-w-2xl mx-auto">
-            We've removed the noise of modern social media. 
-            No algorithms, no infinite scrolling—just real people making real plans.
+          <p className="text-lg md:text-xl text-white/70 font-medium max-w-2xl mx-auto">
+            We've removed the noise of modern social media.
+            <br />
+            No algorithms, no infinite scrolling just real people making real plans.
           </p>
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`group relative glass-card rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between overflow-hidden border border-white/5 transition-all duration-700 hover:scale-[1.01] hover:border-white/15 hover:shadow-[0_20px_80px_rgba(0,0,0,0.4)] ${feature.className}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`reveal-item group relative bg-white rounded-[1.75rem] p-8 md:p-10 flex flex-col justify-between overflow-hidden border border-[#EAEAEA] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] opacity-0 translate-y-10 [&.in-view]:opacity-100 [&.in-view]:translate-y-0 ${feature.className} ${feature.accentColor}`}
+              style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              {/* Radial Hover Glow */}
-              <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-                style={{ 
-                  background: `radial-gradient(circle at 50% 50%, ${feature.glowColor} 0%, transparent 70%)` 
-                }}
-              />
-
-              {/* Shine Effect */}
-              <div className="absolute top-0 left-[-100%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/[0.03] to-transparent skew-x-[-25deg] group-hover:left-[150%] transition-all duration-[1.5s] pointer-events-none" />
+              {/* Top shine on hover */}
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div>
-                <div className="flex items-start justify-between mb-8">
-                  <div className={`w-14 h-14 rounded-2xl ${feature.iconBg} border border-white/5 flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
-                    <feature.icon className={`w-7 h-7 ${feature.iconColor}`} />
+                <div className="flex items-start justify-between mb-7">
+                  <div className={`w-13 h-13 w-12 h-12 rounded-2xl ${feature.iconBg} flex items-center justify-center transition-transform duration-400 group-hover:scale-110 group-hover:rotate-3`}>
+                    <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
                   </div>
                   {feature.badge && (
-                    <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-foreground/40">
+                    <span className="px-3 py-1 rounded-full bg-[#F5F5F5] border border-[#EAEAEA] text-[10px] font-black uppercase tracking-widest text-foreground/45">
                       {feature.badge}
                     </span>
                   )}
                 </div>
 
-                <h3 className="font-satoshi text-2xl md:text-3xl font-black mb-4 tracking-tight group-hover:text-white transition-colors">
+                <h3 className="font-fraunces text-xl md:text-2xl font-bold mb-3 tracking-tight text-foreground group-hover:text-foreground transition-colors">
                   {feature.title}
                 </h3>
-                <p className={`text-base font-medium leading-relaxed transition-colors duration-500 ${feature.className.includes('md:col-span-2') ? 'text-foreground/60 max-w-md group-hover:text-foreground/80' : 'text-foreground/45 group-hover:text-foreground/60 line-clamp-2 md:line-clamp-none'}`}>
+                <p className={`text-sm md:text-base font-medium leading-relaxed text-foreground/55 group-hover:text-foreground/70 transition-colors duration-300 ${feature.className.includes('md:col-span-2') ? 'max-w-md' : 'line-clamp-3 md:line-clamp-none'}`}>
                   {feature.description}
                 </p>
               </div>
 
               {/* Decorative Arrow (Bottom Right) */}
-              <div className="mt-8 flex justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                <div className="w-10 h-10 rounded-full glass border border-white/10 flex items-center justify-center">
-                   <Zap className="w-4 h-4 text-primary" />
+              <div className="mt-7 flex justify-end opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                <div className="w-9 h-9 rounded-full bg-[#F5F5F5] border border-[#EAEAEA] flex items-center justify-center">
+                  <Zap className="w-4 h-4 text-primary" />
                 </div>
               </div>
             </div>
           ))}
 
-          {/* Special "Safety" Wide Card */}
-          <div className="md:col-span-3 glass-card rounded-[2.5rem] p-8 md:px-12 md:py-10 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 group hover:border-emerald-500/20 transition-all duration-500">
-             <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center animate-pulse">
-                   <ShieldCheck className="w-8 h-8 text-emerald-500" />
-                </div>
-                <div>
-                  <h4 className="font-satoshi text-xl md:text-2xl font-black text-white mb-2">Safe & Verified Community</h4>
-                  <p className="text-foreground/50 font-medium max-w-xl">Every user on Lettzo is verified to ensure a respectful, hobby-first environment. We prioritize safety and real human connection above everything else.</p>
-                </div>
-             </div>
-             <button className="px-6 py-3 rounded-2xl glass border border-white/10 text-sm font-bold hover:bg-white/5 transition-all text-foreground/80 whitespace-nowrap">
-                Learn about Safety
-             </button>
+          {/* Safety Wide Card */}
+          <div className="reveal-item md:col-span-3 bg-white rounded-[1.75rem] p-8 md:px-12 md:py-10 border border-[#EAEAEA] flex flex-col md:flex-row items-center justify-between gap-8 group hover:border-emerald-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 opacity-0 translate-y-10 [&.in-view]:opacity-100 [&.in-view]:translate-y-0"
+            style={{ transitionDelay: "0.5s" }}>
+            <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+              <div className="w-14 h-14 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center">
+                <ShieldCheck className="w-7 h-7 text-emerald-500" />
+              </div>
+              <div>
+                <h4 className="font-fraunces text-xl md:text-2xl font-bold text-foreground mb-2">Safe & Verified Community</h4>
+                <p className="text-foreground/50 font-medium max-w-xl text-sm md:text-base">Every user on Lettzo is verified to ensure a respectful, hobby-first environment. We prioritize safety and real human connection above everything else.</p>
+              </div>
+            </div>
+            <button className="px-6 py-3 rounded-2xl bg-[#F5F5F5] border border-[#EAEAEA] text-sm font-bold hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-700 transition-all text-foreground/70 whitespace-nowrap">
+              Learn about Safety
+            </button>
           </div>
         </div>
+      </div>
+
+      {/* Wave transition out of the red section into the next white section */}
+      <div className="absolute bottom-0 inset-x-0 pointer-events-none">
+        <svg
+          viewBox="0 0 1440 80"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          className="w-full block"
+          style={{ height: "80px", marginBottom: "-2px" }}
+        >
+          <path
+            d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,20 1440,40 L1440,80 L0,80 Z"
+            fill="#FAFAFA"
+          />
+        </svg>
       </div>
     </section>
   );
