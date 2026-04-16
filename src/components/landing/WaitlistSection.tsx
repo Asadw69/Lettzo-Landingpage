@@ -279,14 +279,14 @@ const WaitlistSection = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://wa.me/?text=Hey!%20Just%20joined%20the%20waitlist%20for%20Lettzo%E2%80%94it's%20a%20new%20app%20for%20making%20real-world%20plans.%20Check%20it%20out:%20https://lettzo.app"
+                    href="https://wa.me/?text=Hey!%20Just%20joined%20the%20waitlist%20for%20Lettzo%E2%80%94it's%20a%20new%20app%20for%20making%20real-world%20plans.%20Check%20it%20out:%20https://www.lettzo.com"
                     target="_blank"
                     className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-[#25D366] text-white text-sm font-bold transition-all hover:scale-[1.03] active:scale-[0.97] shadow-lg shadow-[#25D366]/20"
                   >
                     Share on WhatsApp
                   </a>
                   <a
-                    href="https://twitter.com/intent/tweet?text=Just%20joined%20the%20waitlist%20for%20@LettzoApp%E2%80%94the%20social%20app%20for%20real-world%20plans.%20See%20you%20there!%20%F0%9F%9A%80%20https://lettzo.app"
+                    href="https://twitter.com/intent/tweet?text=Just%20joined%20the%20waitlist%20for%20@LettzoApp%E2%80%94the%20social%20app%20for%20real-world%20plans.%20See%20you%20there!%20%F0%9F%9A%80%20https://www.lettzo.com"
                     target="_blank"
                     className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-black text-white text-sm font-bold transition-all hover:scale-[1.03] active:scale-[0.97] shadow-lg shadow-black/20"
                   >
