@@ -11,7 +11,7 @@ const MapSection = () => {
   const steps = [
     { n: "1", title: "Post a Plan", desc: "Name it, set a time, pick a vibe. Takes 30 seconds." },
     { n: "2", title: "Find People", desc: "See who else is down. No endless texting needed." },
-    { n: "3", title: "Go Live", desc: "Connect in the dedicated plan chat and make it happen." },
+    { n: "3", title: "Link Up", desc: "You’re all here. Go." },
   ];
 
   return (
@@ -52,11 +52,12 @@ const MapSection = () => {
                   className="group relative flex items-start gap-4 bg-white rounded-2xl p-5 border border-[#EAEAEA] transition-all duration-500 hover:border-transparent hover:scale-[1.01] hover:shadow-[0_20px_40px_rgba(255,0,47,0.15)] overflow-hidden cursor-pointer"
                 >
                   {/* Liquid Fill Layer */}
-                  <div className="absolute inset-0 bg-[#FF002F] z-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out" 
-                       style={{ clipPath: 'circle(0% at 0% 100%)' }} />
-                  
+                  <div className="absolute inset-0 bg-[#FF002F] z-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"
+                    style={{ clipPath: 'circle(0% at 0% 100%)' }} />
+
                   {/* Inline CSS for the clip-path animation because Tailwind can't animate clip-path values easily */}
-                  <style dangerouslySetInnerHTML={{ __html: `
+                  <style dangerouslySetInnerHTML={{
+                    __html: `
                     .group:hover > div[style*="clip-path"] {
                       clip-path: circle(150% at 0% 100%) !important;
                       opacity: 1 !important;
@@ -66,7 +67,7 @@ const MapSection = () => {
                   <div className="relative z-10 flex-shrink-0 w-9 h-9 rounded-xl bg-primary/8 border border-primary/15 flex items-center justify-center transition-colors duration-300 group-hover:bg-white/20 group-hover:border-white/30">
                     <span className="text-sm font-black text-primary transition-colors duration-300 group-hover:text-white">{step.n}</span>
                   </div>
-                  
+
                   <div className="relative z-10">
                     <h4 className="font-semibold text-foreground mb-0.5 transition-colors duration-300 group-hover:text-white">{step.title}</h4>
                     <p className="text-sm text-foreground/50 transition-colors duration-300 group-hover:text-white/80">{step.desc}</p>
@@ -84,10 +85,10 @@ const MapSection = () => {
 
               {/* Map card */}
               <div className="absolute inset-0 bg-white rounded-[2.5rem] overflow-hidden border border-[#EAEAEA] shadow-[20px_20px_60px_-15px_rgba(0,0,0,0.15)] group/map">
-                
+
                 {/* Real Map Background Image */}
-                <img 
-                  src="/map" 
+                <img
+                  src="/map"
                   alt="Live Map"
                   className="absolute inset-0 w-full h-full object-cover grayscale-[0.5] opacity-80 transition-transform duration-[10s] ease-linear group-hover/map:scale-110"
                 />
@@ -104,7 +105,7 @@ const MapSection = () => {
                   >
                     <div className="relative group cursor-pointer">
                       <div className={`absolute -inset-3 rounded-full ${pin.ping} animate-ping opacity-40`} />
-                      
+
                       <div className={`relative flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#EAEAEA] shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1`}>
                         <div className={`w-6 h-6 rounded-full ${pin.bg} flex items-center justify-center`}>
                           <pin.icon className={`w-3.5 h-3.5 ${pin.color}`} />
