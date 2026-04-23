@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Mail, Linkedin, Twitter, Instagram, ArrowUpRight } from "lucide-react";
 import lettzoLogo from "@/assets/lettzo-logo.png";
 
@@ -82,14 +83,24 @@ const Footer = () => {
             <h4 className="font-fraunces text-lg font-bold mb-6 text-foreground">Quick Links</h4>
             <div className="flex flex-col gap-3 md:text-right">
               {links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm font-medium text-foreground/45 hover:text-primary transition-colors flex items-center gap-1 md:justify-end"
-                >
-                  {link.label}
-                  {link.external && <ArrowUpRight className="w-3 h-3 opacity-50" />}
-                </a>
+                link.external ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="text-sm font-medium text-foreground/45 hover:text-primary transition-colors flex items-center gap-1 md:justify-end"
+                  >
+                    {link.label}
+                    <ArrowUpRight className="w-3 h-3 opacity-50" />
+                  </a>
+                ) : (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className="text-sm font-medium text-foreground/45 hover:text-primary transition-colors flex items-center gap-1 md:justify-end"
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
             </div>
           </div>
