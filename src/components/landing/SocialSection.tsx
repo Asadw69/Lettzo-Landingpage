@@ -18,12 +18,12 @@ const SocialSection = () => {
             <div className="grid grid-cols-2 gap-4 md:gap-6">
               <div className="space-y-4 md:space-y-6 pt-12 animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 <div className="aspect-[3/4] rounded-3xl overflow-hidden border border-[#EAEAEA] shadow-[0_8px_32px_rgba(0,0,0,0.10)] transition-transform hover:scale-[1.02] duration-400">
-                  <img src={socialCoffee} alt="Friends having coffee" className="w-full h-full object-cover grayscale-[0.1] hover:grayscale-0 transition-all duration-600" />
+                  <img src={socialCoffee} alt="Friends having coffee" loading="lazy" decoding="async" className="w-full h-full object-cover grayscale-[0.1] hover:grayscale-0 transition-all duration-600" />
                 </div>
               </div>
               <div className="space-y-4 md:space-y-6 animate-fade-in" style={{ animationDelay: "0.35s" }}>
                 <div className="aspect-[3/4] rounded-3xl overflow-hidden border border-[#EAEAEA] shadow-[0_8px_32px_rgba(0,0,0,0.10)] transition-transform hover:scale-[1.02] duration-400">
-                  <img src={socialWalking} alt="Friends walking" className="w-full h-full object-cover grayscale-[0.1] hover:grayscale-0 transition-all duration-600" />
+                  <img src={socialWalking} alt="Friends walking" loading="lazy" decoding="async" className="w-full h-full object-cover grayscale-[0.1] hover:grayscale-0 transition-all duration-600" />
                 </div>
               </div>
             </div>
@@ -37,7 +37,7 @@ const SocialSection = () => {
                   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100"
                 ].map((url, i) => (
                   <div key={i} className="w-8 h-8 rounded-full border-2 border-white overflow-hidden shadow-sm">
-                    <img src={url} alt="User" className="w-full h-full object-cover" />
+                    <img src={url} alt={`User profile ${i + 1}`} loading="lazy" decoding="async" width="32" height="32" className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
@@ -56,7 +56,7 @@ const SocialSection = () => {
                   Because Scrolling Alone{" "}
                   <span className="text-gradient hover:italic transition-all px-2">Gets Old.</span>
                 </h2>
-                <div className="space-y-4 text-lg text-foreground/55 font-medium leading-relaxed">
+                <div className="space-y-4 text-lg text-foreground/80 font-medium leading-relaxed">
                   <p>
                     We spend hours on our phones, but how often does that turn into real memories?
                     Lettzo bridges the gap between online and offline.
@@ -74,7 +74,7 @@ const SocialSection = () => {
                   {/* Subtle top accent line */}
                   <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-primary/40 to-transparent rounded-t-[2rem]" />
 
-                  <blockquote className="relative text-foreground/70 italic text-lg mb-7 leading-relaxed">
+                  <blockquote className="relative text-foreground/90 italic text-lg mb-7 leading-relaxed">
                     "Many people want to do things but don't have the right people at the right time.
                     Lettzo helps people find others with shared interests, so good plans
                     actually happen."

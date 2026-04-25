@@ -22,7 +22,7 @@ const AboutModal = ({ isOpen, onClose }: AboutModalProps) => {
                         <DialogTitle className="font-fraunces text-3xl font-bold mb-4 text-foreground">
                             About <span className="text-gradient hover:italic transition-all px-2">Lettzo</span>
                         </DialogTitle>
-                        <DialogDescription className="text-base font-medium text-foreground/50 leading-relaxed">
+                        <DialogDescription className="text-base font-medium text-foreground/70 leading-relaxed">
                             Lettzo helps people turn "maybe later" into real plans.
                             Meet people through shared moments, not endless chats.
                             No dating pressure—just real connections, made easy.
@@ -39,7 +39,7 @@ const AboutModal = ({ isOpen, onClose }: AboutModalProps) => {
                                 <Globe className="w-5 h-5 text-primary" />
                                 Our Vision
                             </h4>
-                            <p className="text-sm text-foreground/60 leading-relaxed font-medium">
+                            <p className="text-sm text-foreground/80 leading-relaxed font-medium">
                                 We believe in a world where doing things together is the default.
                                 Lettzo helps you find your tribe in the real world, right now.
                             </p>
@@ -47,7 +47,7 @@ const AboutModal = ({ isOpen, onClose }: AboutModalProps) => {
 
                         {/* Contact section */}
                         <div className="space-y-4">
-                            <h4 className="font-bold text-xs px-1 uppercase tracking-[0.2em] text-foreground/30">Connect with us</h4>
+                            <h4 className="font-bold text-xs px-1 uppercase tracking-[0.2em] text-foreground/60">Connect with us</h4>
                             <div className="grid sm:grid-cols-2 gap-3">
                                 <a
                                     href="mailto:asad@lettzo.com"
@@ -57,7 +57,7 @@ const AboutModal = ({ isOpen, onClose }: AboutModalProps) => {
                                         <Mail className="w-5 h-5 text-primary" />
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-foreground/25">Email</span>
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-foreground/60">Email</span>
                                         <span className="font-bold text-sm text-foreground/70 group-hover:text-primary transition-colors">asad@lettzo.com</span>
                                     </div>
                                 </a>

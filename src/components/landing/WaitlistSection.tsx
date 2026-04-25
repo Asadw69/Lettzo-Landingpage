@@ -124,7 +124,7 @@ const WaitlistSection = () => {
           </h2>
 
           <p
-            className="text-lg text-foreground/55 font-medium mb-12 leading-relaxed animate-fade-in"
+            className="text-lg text-foreground/70 font-medium mb-12 leading-relaxed animate-fade-in"
             style={{ animationDelay: "0.2s", opacity: 0 }}
           >
             Join thousands of people who are ready to stop doing things alone.
@@ -141,14 +141,14 @@ const WaitlistSection = () => {
                 {/* Form header */}
                 <div className="mb-6">
                   <h3 className="font-fraunces text-xl font-bold text-foreground mb-1">Join the waitlist</h3>
-                  <p className="text-sm text-foreground/45 font-medium">We'll reach out the moment we launch in your city.</p>
+                  <p className="text-sm text-foreground/70 font-medium">We'll reach out the moment we launch in your city.</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4" noValidate>
 
                   {/* Name */}
                   <div className="space-y-1.5">
-                    <label htmlFor="waitlist-name" className="text-xs font-bold text-foreground/50 uppercase tracking-wider">
+                    <label htmlFor="waitlist-name" className="text-xs font-bold text-foreground/70 uppercase tracking-wider">
                       Your Name
                     </label>
                     <div className="relative">
@@ -168,7 +168,7 @@ const WaitlistSection = () => {
 
                   {/* Email */}
                   <div className="space-y-1.5">
-                    <label htmlFor="waitlist-email" className="text-xs font-bold text-foreground/50 uppercase tracking-wider">
+                    <label htmlFor="waitlist-email" className="text-xs font-bold text-foreground/70 uppercase tracking-wider">
                       Email Address
                     </label>
                     <div className="relative">
@@ -189,7 +189,7 @@ const WaitlistSection = () => {
 
                   {/* State */}
                   <div className="space-y-1.5">
-                    <label htmlFor="waitlist-state" className="text-xs font-bold text-foreground/50 uppercase tracking-wider">
+                    <label htmlFor="waitlist-state" className="text-xs font-bold text-foreground/70 uppercase tracking-wider">
                       Your State
                     </label>
                     <div className="relative">
@@ -247,7 +247,7 @@ const WaitlistSection = () => {
                     )}
                   </button>
 
-                  <p className="text-xs text-foreground/35 font-medium text-center pt-1">
+                  <p className="text-xs text-foreground/60 font-medium text-center pt-1">
                     No spam, ever. Unsubscribe anytime.
                   </p>
                 </form>
@@ -266,14 +266,14 @@ const WaitlistSection = () => {
                 <h3 className="font-fraunces text-3xl md:text-4xl font-bold text-foreground mb-3">
                   You're on the list! 🎉
                 </h3>
-                <p className="text-foreground/55 text-base md:text-lg font-medium max-w-sm mx-auto">
+                <p className="text-foreground/70 text-base md:text-lg font-medium max-w-sm mx-auto">
                   We'll notify you the moment Lettzo launches in your city.
                 </p>
               </div>
 
               {/* Share Section */}
               <div className="w-full max-w-md bg-[#FAFAFA] border border-[#EAEAEA] rounded-[2rem] p-8 mt-4">
-                <p className="text-xs font-black uppercase tracking-widest text-foreground/40 mb-6 flex items-center justify-center gap-2">
+                <p className="text-xs font-black uppercase tracking-widest text-foreground/60 mb-6 flex items-center justify-center gap-2">
                   <Share2 className="w-3 h-3" />
                   Bring your friends along
                 </p>
@@ -297,7 +297,7 @@ const WaitlistSection = () => {
 
               <button
                 onClick={() => setStatus("idle")}
-                className="text-xs text-foreground/35 hover:text-foreground/60 transition-colors underline underline-offset-4 mt-2"
+                className="text-xs text-foreground/60 hover:text-foreground/80 transition-colors underline underline-offset-4 mt-2"
               >
                 Submit another email
               </button>
@@ -315,7 +315,7 @@ const WaitlistSection = () => {
             "⚡ No spam, ever",
             "🚀 First access guaranteed",
           ].map((item) => (
-            <span key={item} className="text-sm text-foreground/40 font-medium">
+            <span key={item} className="text-sm text-foreground/70 font-medium">
               {item}
             </span>
           ))}

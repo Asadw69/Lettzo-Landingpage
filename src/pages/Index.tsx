@@ -1,12 +1,14 @@
-import { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
-import FeaturesSection from "@/components/landing/FeaturesSection";
-import MapSection from "@/components/landing/MapSection";
-import SocialSection from "@/components/landing/SocialSection";
-import WaitlistSection from "@/components/landing/WaitlistSection";
-import Footer from "@/components/landing/Footer";
-import AboutModal from "@/components/landing/AboutModal";
+
+// Lazy load below-the-fold components to improve LCP and reduce render-blocking JS
+const FeaturesSection = React.lazy(() => import("@/components/landing/FeaturesSection"));
+const MapSection = React.lazy(() => import("@/components/landing/MapSection"));
+const SocialSection = React.lazy(() => import("@/components/landing/SocialSection"));
+const WaitlistSection = React.lazy(() => import("@/components/landing/WaitlistSection"));
+const Footer = React.lazy(() => import("@/components/landing/Footer"));
+const AboutModal = React.lazy(() => import("@/components/landing/AboutModal"));
 
 const Index = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -31,20 +33,23 @@ const Index = () => {
       <main>
         <HeroSection onOpenModal={scrollToWaitlist} />
         
-        <FeaturesSection />
-        
-        <MapSection />
-        
-        <SocialSection />
-        
-        <WaitlistSection />
+        <Suspense fallback={<div className="min-h-[50vh]" />}>
+          <FeaturesSection />
+          <MapSection />
+          <SocialSection />
+          <WaitlistSection />
+        </Suspense>
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Suspense fallback={<div className="min-h-[20vh]" />}>
+        <Footer />
+      </Suspense>
 
       {/* Modals */}
-      <AboutModal isOpen={isAboutOpen} onClose={closeAbout} />
+      <Suspense fallback={null}>
+        <AboutModal isOpen={isAboutOpen} onClose={closeAbout} />
+      </Suspense>
     </div>
   );
 };

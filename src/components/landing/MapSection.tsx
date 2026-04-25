@@ -37,7 +37,7 @@ const MapSection = () => {
                 See Who's{" "}
                 <span className="text-gradient">Around You.</span>
               </h2>
-              <p className="text-lg md:text-xl text-foreground/55 leading-relaxed font-medium">
+              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-medium">
                 Open the map and discover what's happening in your neighborhood.
                 From morning runs to late-night coffee — find people who are
                 actually down to do things in real life.
@@ -70,7 +70,7 @@ const MapSection = () => {
 
                   <div className="relative z-10">
                     <h4 className="font-semibold text-foreground mb-0.5 transition-colors duration-300 group-hover:text-white">{step.title}</h4>
-                    <p className="text-sm text-foreground/50 transition-colors duration-300 group-hover:text-white/80">{step.desc}</p>
+                    <p className="text-sm text-foreground/70 transition-colors duration-300 group-hover:text-white/80">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -133,7 +133,7 @@ const MapSection = () => {
                 {/* Live Indicator Overlay */}
                 <div className="absolute bottom-6 left-6 flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/90 backdrop-blur-md border border-[#EAEAEA] shadow-sm">
                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-[10px] font-bold text-foreground/60 uppercase tracking-tighter">Live Updates</span>
+                  <span className="text-[10px] font-bold text-foreground/80 uppercase tracking-tighter">Live Updates</span>
                 </div>
               </div>
             </div>

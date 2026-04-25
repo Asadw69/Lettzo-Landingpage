@@ -16,8 +16,11 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
       <div className="absolute inset-0 z-0">
         <img
           src="/bliss.jpg"
-          alt="Background"
+          alt="People having fun outdoors"
           className="w-full h-full object-cover object-bottom scale-105"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
         />
         {/* Soft light overlay to ensure text readability without blurring the image */}
         <div className="absolute inset-0 bg-white/20 pointer-events-none" />
@@ -73,6 +76,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
           >
             <button
               id="hero-join-waitlist"
+              aria-label="Join Waitlist"
               onClick={onOpenModal}
               className="group relative inline-flex items-center justify-center gap-2.5 h-14 w-full sm:w-1/2 rounded-2xl text-[15px] font-bold text-white overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-button"
             >
@@ -83,6 +87,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
 
             <button
               id="hero-explore-plans"
+              aria-label="Explore Plans"
               onClick={scrollToPlans}
               className="group inline-flex items-center justify-center gap-2.5 h-14 w-full sm:w-1/2 rounded-2xl text-[15px] font-bold bg-white/80 backdrop-blur-md border border-white/80 text-foreground/80 hover:text-foreground hover:border-primary/20 hover:bg-white transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.04)]"
             >

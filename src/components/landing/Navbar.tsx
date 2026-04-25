@@ -41,10 +41,12 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
         >
           <div className="flex items-center justify-between h-14 md:h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 group transition-all duration-300 flex-shrink-0">
+            <Link to="/" aria-label="Home" className="flex items-center gap-2 group transition-all duration-300 flex-shrink-0">
               <img
                 src={lettzoLogo}
                 alt="Lettzo"
+                width="120"
+                height="40"
                 className="h-8 md:h-10 w-auto object-contain transition-all duration-300"
               />
             </Link>
@@ -62,8 +64,9 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
                 </a>
               ))}
               <button
+                aria-label="About"
                 onClick={onOpenAbout}
-                className="relative text-sm font-medium text-foreground/60 hover:text-foreground transition-colors duration-200 px-4 py-2 rounded-full hover:bg-white/40 group"
+                className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200 px-4 py-2 rounded-full hover:bg-white/40 group"
               >
                 About
                 <span className="absolute inset-x-3 bottom-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -73,6 +76,7 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
             {/* CTA Button */}
             <div className="hidden md:flex items-center gap-3">
               <button
+                aria-label="Join Waitlist"
                 onClick={onOpenModal}
                 className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white overflow-hidden group transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-button"
               >
@@ -107,12 +111,14 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
                 </a>
               ))}
               <button
+                aria-label="About"
                 onClick={() => { setIsMobileMenuOpen(false); onOpenAbout(); }}
-                className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors py-3 px-4 rounded-2xl hover:bg-white/10 text-left"
+                className="text-base font-medium text-foreground/90 hover:text-foreground transition-colors py-3 px-4 rounded-2xl hover:bg-white/10 text-left"
               >
                 About
               </button>
               <button
+                aria-label="Join Waitlist"
                 onClick={() => { setIsMobileMenuOpen(false); onOpenModal(); }}
                 className="relative mt-4 inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-base font-bold text-white overflow-hidden shadow-button"
               >

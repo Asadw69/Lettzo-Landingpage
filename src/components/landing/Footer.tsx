@@ -27,17 +27,17 @@ const Footer = () => {
               alt="Lettzo"
               className="h-10 md:h-12 w-auto"
             />
-            <p className="text-sm font-medium text-foreground/50 leading-relaxed max-w-xs">
+            <p className="text-sm font-medium text-foreground/70 leading-relaxed max-w-xs">
               Stop scrolling. Start doing. The social meetup platform designed for real-world connections.
             </p>
             <div className="flex items-center gap-3">
-              <a href="#" className="p-2 rounded-xl bg-white border border-[#EAEAEA] hover:border-primary/20 hover:bg-[#FFF5F5] transition-all text-foreground/50 hover:text-primary shadow-sm">
+              <a href="#" aria-label="Twitter" className="p-2 rounded-xl bg-white border border-[#EAEAEA] hover:border-primary/20 hover:bg-[#FFF5F5] transition-all text-foreground/50 hover:text-primary shadow-sm">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2 rounded-xl bg-white border border-[#EAEAEA] hover:border-primary/20 hover:bg-[#FFF5F5] transition-all text-foreground/50 hover:text-primary shadow-sm">
+              <a href="#" aria-label="Instagram" className="p-2 rounded-xl bg-white border border-[#EAEAEA] hover:border-primary/20 hover:bg-[#FFF5F5] transition-all text-foreground/50 hover:text-primary shadow-sm">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://www.linkedin.com/in/asad-siddiqui-6559a72a1/" target="_blank" className="p-2 rounded-xl bg-white border border-[#EAEAEA] hover:border-primary/20 hover:bg-[#FFF5F5] transition-all text-foreground/50 hover:text-primary shadow-sm">
+              <a href="https://www.linkedin.com/in/asad-siddiqui-6559a72a1/" target="_blank" aria-label="LinkedIn" className="p-2 rounded-xl bg-white border border-[#EAEAEA] hover:border-primary/20 hover:bg-[#FFF5F5] transition-all text-foreground/50 hover:text-primary shadow-sm">
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
@@ -55,7 +55,7 @@ const Footer = () => {
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-widest font-black text-foreground/30">Email Us</span>
+                  <span className="text-[10px] uppercase tracking-widest font-black text-foreground/60">Email Us</span>
                   <span className="text-sm font-bold text-foreground/80">asad@lettzo.com</span>
                 </div>
                 <ArrowUpRight className="ml-auto w-4 h-4 text-foreground/20 group-hover:text-primary transition-colors" />
@@ -70,7 +70,7 @@ const Footer = () => {
                   <Linkedin className="w-5 h-5 text-blue-500" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-widest font-black text-foreground/30">Founder</span>
+                  <span className="text-[10px] uppercase tracking-widest font-black text-foreground/60">Founder</span>
                   <span className="text-sm font-bold text-foreground/80">Asad Siddiqui</span>
                 </div>
                 <ArrowUpRight className="ml-auto w-4 h-4 text-foreground/20 group-hover:text-blue-400 transition-colors" />
@@ -87,7 +87,7 @@ const Footer = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-sm font-medium text-foreground/45 hover:text-primary transition-colors flex items-center gap-1 md:justify-end"
+                    className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors flex items-center gap-1 md:justify-end"
                   >
                     {link.label}
                     <ArrowUpRight className="w-3 h-3 opacity-50" />
@@ -96,7 +96,7 @@ const Footer = () => {
                   <Link
                     key={link.label}
                     to={link.href}
-                    className="text-sm font-medium text-foreground/45 hover:text-primary transition-colors flex items-center gap-1 md:justify-end"
+                    className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors flex items-center gap-1 md:justify-end"
                   >
                     {link.label}
                   </Link>
@@ -108,13 +108,13 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#EAEAEA] flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs font-medium text-foreground/30">
+          <p className="text-xs font-medium text-foreground/60">
             © {currentYear} Lettzo. Built for the spontaneous.
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-foreground/25">Not a dating app</span>
+            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-foreground/60">Not a dating app</span>
             <div className="h-3 w-px bg-[#EAEAEA]" />
-            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-foreground/25">Socially driven</span>
+            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-foreground/60">Socially driven</span>
           </div>
         </div>
       </div>

@@ -125,7 +125,7 @@ const FeaturesSection = () => {
             The platform that <br />
             <span className="text-white/90 hover:italic transition-all px-2">actually works.</span>
           </h2>
-          <p className="text-lg md:text-xl text-white/70 font-medium max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/90 font-medium max-w-2xl mx-auto">
             We've removed the noise of modern social media.
             <br />
             No algorithms, no infinite scrolling just real people making real plans.
@@ -158,7 +158,7 @@ const FeaturesSection = () => {
                 <h3 className="font-fraunces text-xl md:text-2xl font-bold mb-3 tracking-tight text-foreground group-hover:text-foreground transition-colors">
                   {feature.title}
                 </h3>
-                <p className={`text-sm md:text-base font-medium leading-relaxed text-foreground/55 group-hover:text-foreground/70 transition-colors duration-300 ${feature.className.includes('md:col-span-2') ? 'max-w-md' : 'line-clamp-3 md:line-clamp-none'}`}>
+                <p className={`text-sm md:text-base font-medium leading-relaxed text-foreground/70 group-hover:text-foreground/90 transition-colors duration-300 ${feature.className.includes('md:col-span-2') ? 'max-w-md' : 'line-clamp-3 md:line-clamp-none'}`}>
                   {feature.description}
                 </p>
               </div>
@@ -180,11 +180,11 @@ const FeaturesSection = () => {
                 <ShieldCheck className="w-7 h-7 text-emerald-500" />
               </div>
               <div>
-                <h4 className="font-fraunces text-xl md:text-2xl font-bold text-foreground mb-2">Safe & Verified Community</h4>
-                <p className="text-foreground/50 font-medium max-w-xl text-sm md:text-base">Every user on Lettzo is verified to ensure a respectful, hobby-first environment. We prioritize safety and real human connection above everything else.</p>
+                <h3 className="font-fraunces text-xl md:text-2xl font-bold text-foreground mb-2">Safe & Verified Community</h3>
+                <p className="text-foreground/70 font-medium max-w-xl text-sm md:text-base">Every user on Lettzo is verified to ensure a respectful, hobby-first environment. We prioritize safety and real human connection above everything else.</p>
               </div>
             </div>
-            <button className="px-6 py-3 rounded-2xl bg-[#F5F5F5] border border-[#EAEAEA] text-sm font-bold hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-700 transition-all text-foreground/70 whitespace-nowrap">
+            <button aria-label="Learn about Safety" className="px-6 py-3 rounded-2xl bg-[#F5F5F5] border border-[#EAEAEA] text-sm font-bold hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-700 transition-all text-foreground/70 whitespace-nowrap">
               Learn about Safety
             </button>
           </div>
