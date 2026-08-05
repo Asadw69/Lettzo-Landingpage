@@ -25,10 +25,10 @@ const Footer = () => {
             <img
               src={lettzoLogo}
               alt="Lettzo"
-              className="h-10 md:h-12 w-auto"
+              className="h-10 md:h-12 w-auto object-contain filter drop-shadow-sm"
             />
             <p className="text-sm font-medium text-foreground/70 leading-relaxed max-w-xs">
-              Stop scrolling. Start doing. The social meetup platform designed for real-world connections.
+              stop scrolling start doing <br /> the social meetup platform designed for real-world connections
             </p>
             <div className="flex items-center gap-3">
               <a href="#" aria-label="Twitter" className="p-2 rounded-xl bg-white border border-[#EAEAEA] hover:border-primary/20 hover:bg-[#FFF5F5] transition-all text-foreground/50 hover:text-primary shadow-sm">
@@ -45,7 +45,7 @@ const Footer = () => {
 
           {/* Contact Block */}
           <div className="col-span-1 lg:col-span-2 flex flex-col items-center md:items-start">
-            <h4 className="font-fraunces text-lg font-bold mb-6 text-foreground">Let's build the future together.</h4>
+            <h4 className="font-fraunces text-lg font-bold mb-6 text-foreground">let's build the future together</h4>
             <div className="flex flex-col sm:flex-row gap-4 w-full">
               <a
                 href="mailto:asad@lettzo.com"
@@ -80,7 +80,7 @@ const Footer = () => {
 
           {/* Links Column */}
           <div className="flex flex-col md:items-end">
-            <h4 className="font-fraunces text-lg font-bold mb-6 text-foreground">Quick Links</h4>
+            <h4 className="font-fraunces text-lg font-bold mb-6 text-foreground">quick links</h4>
             <div className="flex flex-col gap-3 md:text-right">
               {links.map((link) => (
                 link.external ? (
@@ -109,13 +109,8 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#EAEAEA] flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs font-medium text-foreground/60">
-            © {currentYear} Lettzo. Built for the spontaneous.
+            © {currentYear} Lettzo
           </p>
-          <div className="flex items-center gap-6">
-            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-foreground/60">Not a dating app</span>
-            <div className="h-3 w-px bg-[#EAEAEA]" />
-            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-foreground/60">Socially driven</span>
-          </div>
         </div>
       </div>
     </footer>

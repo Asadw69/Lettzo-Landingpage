@@ -15,18 +15,17 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: Zap,
-    title: "Spontaneous Meetups",
-    description: "Got an hour for coffee or a quick gym session? Create a plan and find someone to join you instantly. No more waiting for 'someday'.",
+    title: "spontaneous meetups",
+    description: "got an hour for coffee or a quick gym session? create a plan and find someone to join you instantly.",
     className: "md:col-span-2",
     iconBg: "bg-amber-50",
     iconColor: "text-amber-500",
     accentColor: "hover:border-amber-200",
-    badge: "Life-changing",
   },
   {
     icon: Map,
-    title: "Live Discovery",
-    description: "See what's happening around you in real-time.",
+    title: "live discovery",
+    description: "see what's happening around you in real-time.",
     className: "md:col-span-1",
     iconBg: "bg-cyan-50",
     iconColor: "text-cyan-500",
@@ -34,8 +33,8 @@ const features: Feature[] = [
   },
   {
     icon: MessageCircle,
-    title: "Plan Chats",
-    description: "Dedicated spaces for every meetup.",
+    title: "plan chats",
+    description: "dedicated spaces for every meetup.",
     className: "md:col-span-1",
     iconBg: "bg-violet-50",
     iconColor: "text-violet-500",
@@ -43,8 +42,8 @@ const features: Feature[] = [
   },
   {
     icon: Brain,
-    title: "AI Vibe Match",
-    description: "Our intelligence understands your mood and interests to suggest the perfect meetup. It doesn't just match keywords; it matches human connection.",
+    title: "ai vibe match",
+    description: "our intelligence understands your mood and interests to suggest the perfect meetup. it doesn't just match keywords; it matches human connection.",
     className: "md:col-span-1",
     iconBg: "bg-rose-50",
     iconColor: "text-primary",
@@ -53,8 +52,8 @@ const features: Feature[] = [
   },
   {
     icon: Video,
-    title: "Virtual Hangouts",
-    description: "Can't make it in person? Bridge the distance with high-fidelity social rooms.",
+    title: "virtual hangouts",
+    description: "can't make it in person? bridge the distance with high-fidelity social rooms.",
     className: "md:col-span-1",
     iconBg: "bg-blue-50",
     iconColor: "text-blue-500",
@@ -62,8 +61,8 @@ const features: Feature[] = [
   },
   {
     icon: Calendar,
-    title: "Seamless Hosting",
-    description: "From 2-person coffee chats to 50-person hikes. Automated RSVP tracking, waitlists, and venue sorting make coordination effortless.",
+    title: "seamless hosting",
+    description: "from 2-person coffee chats to 50-person hikes.",
     className: "md:col-span-2",
     iconBg: "bg-orange-50",
     iconColor: "text-orange-500",
@@ -72,8 +71,8 @@ const features: Feature[] = [
   },
   {
     icon: Tag,
-    title: "Vibe Matching",
-    description: "Find people on your precise wavelength.",
+    title: "vibe matching",
+    description: "find people on your precise wavelength.",
     className: "md:col-span-1",
     iconBg: "bg-pink-50",
     iconColor: "text-pink-500",
@@ -81,8 +80,8 @@ const features: Feature[] = [
   },
   {
     icon: Users,
-    title: "Strictly Social",
-    description: "Designed for shared activities and real hobbies. We're here for connections, not dating.",
+    title: "strictly social",
+    description: "designed for shared activities and real hobbies. we're here for connections, not dating.",
     className: "md:col-span-3",
     iconBg: "bg-emerald-50",
     iconColor: "text-emerald-500",
@@ -117,18 +116,18 @@ const FeaturesSection = () => {
 
         {/* Header Section */}
         <div className="reveal-item max-w-4xl mb-16 md:mb-24 text-center mx-auto opacity-0 translate-y-8 transition-all duration-700 ease-out [&.in-view]:opacity-100 [&.in-view]:translate-y-0">
-          <div className="pill-badge text-white border-white/20 bg-white/10 mx-auto w-fit mb-6">
-            <TrendingUp className="w-3 h-3 text-white" />
+          <div className="pill-badge text-slate-800 border-white/30 bg-white mx-auto w-fit mb-6 shadow-sm">
+            <TrendingUp className="w-3.5 h-3.5 text-primary" />
             Designed for connection
           </div>
           <h2 className="font-fraunces text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-[1.1] tracking-tight text-white">
-            The platform that <br />
-            <span className="text-white/90 hover:italic transition-all px-2">actually works.</span>
+            the platform that <br />
+            <span className="text-white/90 hover:italic transition-all px-2">actually works</span>
           </h2>
           <p className="text-lg md:text-xl text-white/90 font-medium max-w-2xl mx-auto">
-            We've removed the noise of modern social media.
+            we've removed the noise of modern social media
             <br />
-            No algorithms, no infinite scrolling just real people making real plans.
+            no endless scrolling, just real people making real plans
           </p>
         </div>
 
@@ -180,13 +179,10 @@ const FeaturesSection = () => {
                 <ShieldCheck className="w-7 h-7 text-emerald-500" />
               </div>
               <div>
-                <h3 className="font-fraunces text-xl md:text-2xl font-bold text-foreground mb-2">Safe & Verified Community</h3>
-                <p className="text-foreground/70 font-medium max-w-xl text-sm md:text-base">Every user on Lettzo is verified to ensure a respectful, hobby-first environment. We prioritize safety and real human connection above everything else.</p>
+                <h3 className="font-fraunces text-xl md:text-2xl font-bold text-foreground mb-2">safe & verified community</h3>
+                <p className="text-foreground/70 font-medium max-w-xl text-sm md:text-base">every user on Lettzo is verified to ensure a respectful, hobby-first environment. we prioritize safety and real human connection above everything else.</p>
               </div>
             </div>
-            <button aria-label="Learn about Safety" className="px-6 py-3 rounded-2xl bg-[#F5F5F5] border border-[#EAEAEA] text-sm font-bold hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-700 transition-all text-foreground/70 whitespace-nowrap">
-              Learn about Safety
-            </button>
           </div>
         </div>
       </div>

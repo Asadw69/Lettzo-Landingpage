@@ -11,7 +11,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
   };
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-[95vh] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center pt-12 pb-16 md:pt-16 md:pb-20 overflow-hidden">
       {/* High-quality background image container */}
       <div className="absolute inset-0 z-0">
         <img
@@ -37,7 +37,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
         }}
       />
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 -mt-6 md:-mt-10">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
 
           {/* Pill badge */}
@@ -47,7 +47,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight text-black mb-6 leading-[1.1] md:leading-[1.05] drop-shadow-sm font-fraunces text-center w-full max-w-5xl md:whitespace-nowrap animate-fade-in"
             style={{ animationDelay: "0.2s", animationFillMode: "forwards", opacity: 0 }}
           >
-            Touch some <span className="text-primary italic font-serif relative inline-block">
+            touch some <span className="text-primary italic font-serif relative inline-block">
               grass
             </span>
           </h1>
@@ -58,15 +58,8 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
             style={{ animationDelay: "0.4s", opacity: 0 }}
           >
             <p className="text-lg md:text-xl font-bold text-slate-800 max-w-2xl text-center leading-relaxed drop-shadow-sm px-4">
-              Whatever you're in the mood for — find people ready to join.{" "}
-              <br className="hidden md:block" />
-              Coffee, gym, movies, travel, and more.
+              whatever you're in the mood for find people ready to join
             </p>
-            <div className="inline-flex items-center justify-center bg-white/60 backdrop-blur-md px-4 h-9 rounded-full border border-black/10 shadow-sm">
-              <p className="text-xs font-bold text-black uppercase tracking-[0.15em]">
-                Stop Doing Things Alone
-              </p>
-            </div>
           </div>
 
           {/* CTA Buttons - Centered Row */}

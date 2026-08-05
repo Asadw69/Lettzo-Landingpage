@@ -9,15 +9,13 @@ const MapSection = () => {
   ];
 
   const steps = [
-    { n: "1", title: "Post a Plan", desc: "Name it, set a time, pick a vibe. Takes 30 seconds." },
-    { n: "2", title: "Find People", desc: "See who else is down. No endless texting needed." },
-    { n: "3", title: "Link Up", desc: "You’re all here. Go." },
+    { n: "1", title: "post a plan", desc: "name it, choose a time, and publish it" },
+    { n: "2", title: "find people", desc: "see who else is down, no endless texting needed" },
+    { n: "3", title: "link up", desc: "you’re all here, go" },
   ];
 
   return (
-    <section id="how-it-works" className="py-20 md:py-32 relative overflow-hidden bg-white">
-      {/* Section divider top */}
-      <div className="absolute top-0 left-0 right-0 section-divider" />
+    <section id="how-it-works" className="py-20 md:py-32 relative overflow-hidden bg-[#FBFBFB]">
 
       {/* Background accents */}
       <div className="absolute left-0 top-1/3 w-[400px] h-[400px] bg-cyan-400/4 rounded-full blur-[100px] pointer-events-none" />
@@ -29,18 +27,12 @@ const MapSection = () => {
           {/* ── Left Content ── */}
           <div className="order-2 lg:order-1 space-y-10">
             <div>
-              <span className="pill-badge text-primary/80 border-primary/15 bg-primary/5 mb-6 inline-flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-primary" />
-                Neighborhood Visual
-              </span>
               <h2 className="font-fraunces text-4xl sm:text-5xl md:text-7xl font-bold mb-5 leading-tight text-foreground">
-                See Who's{" "}
-                <span className="text-gradient">Around You.</span>
+                see who's{" "}
+                <span className="text-gradient">around you</span>
               </h2>
               <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-medium">
-                Open the map and discover what's happening in your neighborhood.
-                From morning runs to late-night coffee — find people who are
-                actually down to do things in real life.
+                open the map and discover what's happening in your neighborhood
               </p>
             </div>
 

@@ -1,5 +1,6 @@
 import socialCoffee from "@/assets/social-coffee.jpg";
 import socialWalking from "@/assets/social-walking.jpg";
+import asadImg from "@/assets/Asad.jpeg";
 
 const SocialSection = () => {
   return (
@@ -32,7 +33,7 @@ const SocialSection = () => {
             <div className="absolute -bottom-6 right-8 bg-white p-4 rounded-2xl border border-[#EAEAEA] animate-float shadow-[0_4px_20px_rgba(0,0,0,0.10)]">
               <div className="flex -space-x-2">
                 {[
-                  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100&h=100",
+                  asadImg,
                   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100&h=100",
                   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100"
                 ].map((url, i) => (
@@ -49,21 +50,14 @@ const SocialSection = () => {
           <div className="lg:pl-8 order-1 lg:order-2">
             <div className="space-y-8">
               <div className="animate-fade-in">
-                <span className="pill-badge text-primary/80 border-primary/15 bg-primary/5 mb-6 inline-block">
-                  Real Connections
-                </span>
                 <h2 className="font-fraunces text-3xl sm:text-5xl font-bold mb-6 leading-tight text-foreground">
-                  Because Scrolling Alone{" "}
-                  <span className="text-gradient hover:italic transition-all px-2">Gets Old.</span>
+                  because scrolling alone{" "}
+                  <span className="text-gradient hover:italic transition-all px-2">gets old</span>
                 </h2>
                 <div className="space-y-4 text-lg text-foreground/80 font-medium leading-relaxed">
                   <p>
-                    We spend hours on our phones, but how often does that turn into real memories?
-                    Lettzo bridges the gap between online and offline.
-                  </p>
-                  <p>
-                    Whether it's a spontaneous coffee run, a gym buddy, or a weekend adventure —
-                    life's better when you share it with others.
+                    we spend hours on our phones, but how often does that turn into real memories?
+                    lettzo bridges the gap between online and offline
                   </p>
                 </div>
               </div>
@@ -81,12 +75,16 @@ const SocialSection = () => {
                   </blockquote>
 
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/30 to-pink-400/30 border border-primary/10 flex items-center justify-center font-black text-primary text-lg group-hover:scale-110 transition-transform">
-                      A
+                    <div className="w-12 h-12 rounded-2xl border-2 border-primary/20 overflow-hidden shadow-md group-hover:scale-110 transition-transform">
+                      <img
+                        src={asadImg}
+                        alt="Asad Siddiqui - Founder of Lettzo"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <p className="font-bold text-foreground">Asad Siddiqui</p>
-                      <p className="text-xs font-bold text-primary uppercase tracking-widest">Founder, 21 — Dehradun</p>
+                      <p className="text-xs font-bold text-primary tracking-widest">Founder, 21 — Dehradun</p>
                     </div>
                   </div>
                 </div>

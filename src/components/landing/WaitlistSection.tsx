@@ -72,8 +72,8 @@ const WaitlistSection = () => {
           error.message?.toLowerCase().includes("unique")
         ) {
           setStatus("error");
-          setErrorMsg("This email is already on the waitlist! 🎉 You're all set.");
-          toast.error("Already on the list!", { description: "You're already registered. We'll notify you at launch." });
+          setErrorMsg("this email is already on the waitlist!");
+          toast.error("already on the list!", { description: "you're already registered, we'll notify you at launch" });
         } else {
           throw error;
         }
@@ -107,28 +107,22 @@ const WaitlistSection = () => {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
 
-          {/* Badge */}
-          <div className="pill-badge text-primary border-primary/15 bg-primary/5 mx-auto w-fit mb-8 animate-fade-in">
-            <Sparkles className="w-3.5 h-3.5 text-primary" />
-            Early Access
-          </div>
 
           {/* Heading */}
           <h2
             className="font-fraunces text-4xl sm:text-5xl md:text-6xl font-bold mb-5 leading-tight text-foreground animate-fade-in"
             style={{ animationDelay: "0.1s", opacity: 0 }}
           >
-            Be First to{" "}
-            <span className="text-gradient hover:italic transition-all px-2">Experience</span>{" "}
-            Lettzo.
+            be first to{" "}
+            <span className="text-gradient hover:italic transition-all px-2">experience</span>{" "}
+            Lettzo
           </h2>
 
           <p
             className="text-lg text-foreground/70 font-medium mb-12 leading-relaxed animate-fade-in"
             style={{ animationDelay: "0.2s", opacity: 0 }}
           >
-            Join thousands of people who are ready to stop doing things alone.
-            Get exclusive early access when we launch.
+            join thousands of people who are ready to stop doing things alone
           </p>
 
           {/* Form Card */}
@@ -140,16 +134,16 @@ const WaitlistSection = () => {
               <div className="bg-white rounded-2xl border border-[#EAEAEA] shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-8 text-left">
                 {/* Form header */}
                 <div className="mb-6">
-                  <h3 className="font-fraunces text-xl font-bold text-foreground mb-1">Join the waitlist</h3>
-                  <p className="text-sm text-foreground/70 font-medium">We'll reach out the moment we launch in your city.</p>
+                  <h3 className="font-fraunces text-xl font-bold text-foreground mb-1">join the waitlist</h3>
+                  <p className="text-sm text-foreground/70 font-medium">we'll reach out the moment we launch in your city</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4" noValidate>
 
                   {/* Name */}
                   <div className="space-y-1.5">
-                    <label htmlFor="waitlist-name" className="text-xs font-bold text-foreground/70 uppercase tracking-wider">
-                      Your Name
+                    <label htmlFor="waitlist-name" className="text-xs font-bold text-foreground/70 tracking-wider">
+                      your name
                     </label>
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/30 pointer-events-none" />
@@ -158,7 +152,7 @@ const WaitlistSection = () => {
                         type="text"
                         value={name}
                         onChange={(e) => { setName(e.target.value); setStatus("idle"); setErrorMsg(""); }}
-                        placeholder="Arjun Sharma"
+                        placeholder="Your name"
                         required
                         disabled={status === "loading"}
                         className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-[#FAFAFA] border border-[#EAEAEA] text-foreground placeholder-foreground/30 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/40 transition-all duration-200 disabled:opacity-60"
@@ -168,8 +162,8 @@ const WaitlistSection = () => {
 
                   {/* Email */}
                   <div className="space-y-1.5">
-                    <label htmlFor="waitlist-email" className="text-xs font-bold text-foreground/70 uppercase tracking-wider">
-                      Email Address
+                    <label htmlFor="waitlist-email" className="text-xs font-bold text-foreground/70 tracking-wider">
+                      your email
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/30 pointer-events-none" />
@@ -178,7 +172,7 @@ const WaitlistSection = () => {
                         type="email"
                         value={email}
                         onChange={(e) => { setEmail(e.target.value); setStatus("idle"); setErrorMsg(""); }}
-                        placeholder="arjun@example.com"
+                        placeholder="Your email"
                         required
                         disabled={status === "loading"}
                         className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-[#FAFAFA] border border-[#EAEAEA] text-foreground placeholder-foreground/30 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/40 transition-all duration-200 disabled:opacity-60"
@@ -189,17 +183,17 @@ const WaitlistSection = () => {
 
                   {/* State */}
                   <div className="space-y-1.5">
-                    <label htmlFor="waitlist-state" className="text-xs font-bold text-foreground/70 uppercase tracking-wider">
-                      Your State
+                    <label htmlFor="waitlist-state" className="text-xs font-bold text-foreground/70 tracking-wider">
+                      your state
                     </label>
                     <div className="relative">
                       <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/30 pointer-events-none z-10" />
-                      <Select 
-                        value={state} 
+                      <Select
+                        value={state}
                         onValueChange={(val) => { setState(val); setStatus("idle"); setErrorMsg(""); }}
                       >
-                        <SelectTrigger 
-                          className="w-full pl-11 pr-4 py-6.5 rounded-xl bg-[#FAFAFA] border border-[#EAEAEA] text-sm font-medium focus:ring-2 focus:ring-primary/25 focus:border-primary/40 transition-all duration-200 disabled:opacity-60 h-auto"
+                        <SelectTrigger
+                          className="w-full pl-11 pr-4 h-14 min-h14 rounded-xl bg-[#FAFAFA] border border-[#EAEAEA] text-sm font-medium focus:ring-2 focus:ring-primary/25 focus:border-primary/40 transition-all duration-200 disabled:opacity-60 h-auto"
                         >
                           <SelectValue placeholder="Select your state" />
                         </SelectTrigger>
@@ -248,7 +242,7 @@ const WaitlistSection = () => {
                   </button>
 
                   <p className="text-xs text-foreground/60 font-medium text-center pt-1">
-                    No spam, ever. Unsubscribe anytime.
+                    no spam ever
                   </p>
                 </form>
               </div>
@@ -261,21 +255,21 @@ const WaitlistSection = () => {
                 <div className="absolute inset-0 rounded-full bg-emerald-50" />
                 <Check className="relative w-10 h-10 text-emerald-500" strokeWidth={3} />
               </div>
-              
+
               <div className="text-center">
                 <h3 className="font-fraunces text-3xl md:text-4xl font-bold text-foreground mb-3">
-                  You're on the list! 🎉
+                  you're on the list!
                 </h3>
                 <p className="text-foreground/70 text-base md:text-lg font-medium max-w-sm mx-auto">
-                  We'll notify you the moment Lettzo launches in your city.
+                  we'll notify you the moment Lettzo launches in your city
                 </p>
               </div>
 
               {/* Share Section */}
               <div className="w-full max-w-md bg-[#FAFAFA] border border-[#EAEAEA] rounded-[2rem] p-8 mt-4">
-                <p className="text-xs font-black uppercase tracking-widest text-foreground/60 mb-6 flex items-center justify-center gap-2">
+                <p className="text-xs font-black tracking-widest text-foreground/60 mb-6 flex items-center justify-center gap-2">
                   <Share2 className="w-3 h-3" />
-                  Bring your friends along
+                  bring your friends along
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
@@ -283,14 +277,14 @@ const WaitlistSection = () => {
                     target="_blank"
                     className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-[#25D366] text-white text-sm font-bold transition-all hover:scale-[1.03] active:scale-[0.97] shadow-lg shadow-[#25D366]/20"
                   >
-                    Share on WhatsApp
+                    share on whatsapp
                   </a>
                   <a
                     href="https://twitter.com/intent/tweet?text=Just%20joined%20the%20waitlist%20for%20@LettzoApp%E2%80%94the%20social%20app%20for%20real-world%20plans.%20See%20you%20there!%20%F0%9F%9A%80%20https://www.lettzo.com"
                     target="_blank"
                     className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-black text-white text-sm font-bold transition-all hover:scale-[1.03] active:scale-[0.97] shadow-lg shadow-black/20"
                   >
-                    Share on X
+                    share on x
                   </a>
                 </div>
               </div>
@@ -299,26 +293,10 @@ const WaitlistSection = () => {
                 onClick={() => setStatus("idle")}
                 className="text-xs text-foreground/60 hover:text-foreground/80 transition-colors underline underline-offset-4 mt-2"
               >
-                Submit another email
+                submit another email
               </button>
             </div>
           )}
-        </div>
-
-        {/* Trust indicators */}
-        <div
-          className="flex flex-wrap items-center justify-center gap-6 mt-14 animate-fade-in"
-          style={{ animationDelay: "0.5s", opacity: 0 }}
-        >
-          {[
-            "🔒 Privacy first",
-            "⚡ No spam, ever",
-            "🚀 First access guaranteed",
-          ].map((item) => (
-            <span key={item} className="text-sm text-foreground/70 font-medium">
-              {item}
-            </span>
-          ))}
         </div>
       </div>
     </section>

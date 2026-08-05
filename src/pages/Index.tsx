@@ -4,8 +4,11 @@ import HeroSection from "@/components/landing/HeroSection";
 
 // Lazy load below-the-fold components to improve LCP and reduce render-blocking JS
 const FeaturesSection = React.lazy(() => import("@/components/landing/FeaturesSection"));
+const WhyLettzoSection = React.lazy(() => import("@/components/landing/WhyLettzoSection"));
+const PlansSection = React.lazy(() => import("@/components/landing/PlansSection"));
 const MapSection = React.lazy(() => import("@/components/landing/MapSection"));
 const SocialSection = React.lazy(() => import("@/components/landing/SocialSection"));
+const FAQSection = React.lazy(() => import("@/components/landing/FAQSection"));
 const WaitlistSection = React.lazy(() => import("@/components/landing/WaitlistSection"));
 const Footer = React.lazy(() => import("@/components/landing/Footer"));
 const AboutModal = React.lazy(() => import("@/components/landing/AboutModal"));
@@ -35,8 +38,11 @@ const Index = () => {
         
         <Suspense fallback={<div className="min-h-[50vh]" />}>
           <FeaturesSection />
+          <WhyLettzoSection />
+          <PlansSection />
           <MapSection />
           <SocialSection />
+          <FAQSection />
           <WaitlistSection />
         </Suspense>
       </main>

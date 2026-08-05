@@ -45,9 +45,7 @@ const Navbar = ({ onOpenModal, onOpenAbout }: NavbarProps) => {
               <img
                 src={lettzoLogo}
                 alt="Lettzo"
-                width="120"
-                height="40"
-                className="h-8 md:h-10 w-auto object-contain transition-all duration-300"
+                className="h-9 md:h-11 w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-sm"
               />
             </Link>
 
