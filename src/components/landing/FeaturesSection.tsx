@@ -43,7 +43,7 @@ const features: Feature[] = [
   {
     icon: Brain,
     title: "ai vibe match",
-    description: "our intelligence understands your mood and interests to suggest the perfect meetup. it doesn't just match keywords; it matches human connection.",
+    description: "our intelligence understands your mood and interests to suggest the perfect meetup. it doesn't just match keywords, it matches human connection.",
     className: "md:col-span-1",
     iconBg: "bg-rose-50",
     iconColor: "text-primary",
