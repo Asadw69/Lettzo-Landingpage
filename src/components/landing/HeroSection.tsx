@@ -33,7 +33,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[center_25%]"
         >
           <source
             src="https://strvid.nyc3.cdn.digitaloceanspaces.com/cloudinary/flowers_motion_r54og5.webm"
