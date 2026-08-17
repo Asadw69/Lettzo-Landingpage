@@ -150,7 +150,7 @@ const FeaturesSection = () => {
                   <h3 className="font-fraunces text-xl md:text-[1.4rem] font-bold mb-2.5 tracking-[-0.02em] leading-[1.2] text-foreground">
                     {feature.title}
                   </h3>
-                  <p className={`text-[15px] font-light leading-[1.65] text-foreground/75 group-hover:text-foreground/90 transition-colors duration-hover ${feature.className.includes('md:col-span-2') ? 'max-w-md' : 'line-clamp-3 md:line-clamp-none'}`}>
+                  <p className={`text-[15px] font-medium leading-[1.65] text-foreground/60 group-hover:text-foreground/80 transition-colors duration-hover ${feature.className.includes('md:col-span-2') ? 'max-w-md' : 'line-clamp-3 md:line-clamp-none'}`}>
                     {feature.description}
                   </p>
                 </div>
@@ -178,7 +178,7 @@ const FeaturesSection = () => {
                 </div>
                 <div>
                   <h3 className="font-fraunces text-xl md:text-2xl font-bold text-foreground mb-2 tracking-[-0.02em]">safe &amp; verified community</h3>
-                  <p className="text-foreground/75 font-light max-w-xl text-[15px] leading-[1.65]">every user on Lettzo is verified to ensure a respectful, hobby-first environment. we prioritize safety and real human connection above everything else.</p>
+                  <p className="text-foreground/60 font-medium max-w-xl text-[15px] leading-[1.65]">every user on Lettzo is verified to ensure a respectful, hobby-first environment. we prioritize safety and real human connection above everything else.</p>
                 </div>
               </div>
               <Link
