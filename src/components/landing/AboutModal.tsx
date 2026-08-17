@@ -22,10 +22,12 @@ const AboutModal = ({ isOpen, onClose }: AboutModalProps) => {
                         <DialogTitle className="font-fraunces text-3xl font-bold mb-4 text-foreground">
                             About <span className="text-gradient hover:italic transition-all px-2">Lettzo</span>
                         </DialogTitle>
-                        <DialogDescription className="text-base font-medium text-foreground/70 leading-relaxed">
-                            Lettzo helps people turn "maybe later" into real plans.
-                            Meet people through shared moments, not endless chats.
-                            No dating pressure—just real connections, made easy.
+                        <DialogDescription className="text-base font-light text-foreground/75 leading-relaxed">
+                            lettzo helps people turn maybe later into real plans
+                            <br />
+                            meet people through shared moments not endless chats
+                            <br />
+                            no dating pressure just real connections made easy
                         </DialogDescription>
                     </DialogHeader>
 
@@ -37,11 +39,12 @@ const AboutModal = ({ isOpen, onClose }: AboutModalProps) => {
                             </div>
                             <h4 className="font-bold text-lg mb-3 flex items-center gap-2 text-foreground">
                                 <Globe className="w-5 h-5 text-primary" />
-                                Our Vision
+                                our vision
                             </h4>
-                            <p className="text-sm text-foreground/80 leading-relaxed font-medium">
-                                We believe in a world where doing things together is the default.
-                                Lettzo helps you find your tribe in the real world, right now.
+                            <p className="text-sm text-foreground/80 leading-relaxed font-light">
+                                we believe in a world where doing things together is the default
+                                <br />
+                                lettzo helps you find your tribe in the real world right now
                             </p>
                         </div>
 
@@ -78,11 +81,6 @@ const AboutModal = ({ isOpen, onClose }: AboutModalProps) => {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                {/* Footer text */}
-                <div className="p-4 bg-[#FAFAFA] border-t border-[#EAEAEA] text-center">
-                    <p className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground/25">Designed for 2026</p>
                 </div>
             </DialogContent>
         </Dialog>

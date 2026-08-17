@@ -1,9 +1,9 @@
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useNavigate } from "react-router-dom";
-import { FileText, ShieldAlert, Users, Scale, Mail } from "lucide-react";
+import { ShieldCheck, Mail } from "lucide-react";
 
-const Terms = () => {
+const Safety = () => {
   const navigate = useNavigate();
 
   const navigateToIndex = (sectionId: string) => {
@@ -21,10 +21,10 @@ const Terms = () => {
         {/* Header */}
         <div className="mb-12 text-center">
           <h1 className="font-fraunces text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-foreground mb-4">
-            terms of service
+            community safety guide
           </h1>
           <p className="text-base sm:text-lg text-foreground/60 font-light max-w-xl mx-auto leading-relaxed">
-            by accessing or using Lettzo, you agree to these clear, straightforward terms.
+            our top priority is keeping real-world meetups safe, respectful, and transparent.
           </p>
         </div>
 
@@ -33,45 +33,23 @@ const Terms = () => {
           
           <section className="space-y-3">
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
-              1. Eligibility & Age Requirements
+              1. Before You Meet Up
             </h2>
             <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
-              You must be at least 16 years of age to use Lettzo. By using the app, you confirm you are legally capable of entering this agreement and will comply with all local laws and regulations.
-            </p>
-          </section>
-
-          <div className="h-px bg-slate-100" />
-
-          <section className="space-y-3">
-            <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
-              2. User Accounts & Integrity
-            </h2>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
-              You agree to provide accurate information and maintain the security of your account. You are solely responsible for any activity that occurs under your profile.
-            </p>
-          </section>
-
-          <div className="h-px bg-slate-100" />
-
-          <section className="space-y-3">
-            <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
-              3. Community Standards & Conduct
-            </h2>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
-              Lettzo is built for genuine real-world meetups and shared hobbies. We maintain a zero-tolerance policy towards:
+              Real connections happen in the real world, but taking simple precautions ensures a positive experience for everyone:
             </p>
             <ul className="space-y-2 text-[15px] text-foreground/75 font-light pt-1">
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span>Harassment, hate speech, threats, or abusive behavior.</span>
+                <span><strong className="font-medium text-foreground">Always meet in public:</strong> Choose busy coffee shops, parks, cafes, sports clubs, or public venues for first-time meetups.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span>Impersonation, scams, spam, or unsolicited promotions.</span>
+                <span><strong className="font-medium text-foreground">Inform a friend:</strong> Let a friend or family member know where you are going and who you are meeting.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span>Posting unlawful, explicit, or harmful media.</span>
+                <span><strong className="font-medium text-foreground">Arrange your own transport:</strong> Arrive and leave using your own vehicle or public transit.</span>
               </li>
             </ul>
           </section>
@@ -80,10 +58,13 @@ const Terms = () => {
 
           <section className="space-y-3">
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
-              4. Safety & In-Person Meetups
+              2. Strict Hobby-First Culture
             </h2>
             <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
-              Lettzo facilitates connections, but in-person meetups are organized independently by users. Always meet in well-lit public places and prioritize your personal safety and comfort.
+              Lettzo is strictly designed for shared activities, mutual interests, and genuine social connections. It is not a dating or hookup app.
+            </p>
+            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+              Any user engaging in harassment, unsolicited romantic pressure, inappropriate messaging, or disrespectful conduct will be permanently banned immediately.
             </p>
           </section>
 
@@ -91,10 +72,31 @@ const Terms = () => {
 
           <section className="space-y-3">
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
-              5. Limitation of Liability
+              3. Reporting & Moderation
             </h2>
             <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
-              To the fullest extent permitted by law, Lettzo and its team are not liable for direct or indirect disputes, injuries, damages, or occurrences arising from interactions with other users.
+              If someone makes you uncomfortable, violates our guidelines, or behaves suspiciously, you have the right to leave immediately and report them.
+            </p>
+            <ul className="space-y-2 text-[15px] text-foreground/75 font-light pt-1">
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span>Reports are reviewed with urgent priority by our moderation team.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span>Users found violating community trust face instant permanent suspension.</span>
+              </li>
+            </ul>
+          </section>
+
+          <div className="h-px bg-slate-100" />
+
+          <section className="space-y-3">
+            <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
+              4. Trust Your Instincts
+            </h2>
+            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+              Your comfort and safety always come first. If a plan or person feels off at any point, never hesitate to cancel or leave. You do not owe anyone your time if you feel unsafe.
             </p>
           </section>
 
@@ -104,10 +106,10 @@ const Terms = () => {
           <section className="pt-2 text-center sm:text-left space-y-4">
             <div>
               <h3 className="font-fraunces text-xl font-bold text-foreground mb-1">
-                legal questions or support?
+                have a safety concern?
               </h3>
               <p className="text-sm text-foreground/60 font-light">
-                reach out to our founder directly
+                contact our dedicated safety support directly
               </p>
             </div>
             <a
@@ -127,4 +129,4 @@ const Terms = () => {
   );
 };
 
-export default Terms;
+export default Safety;

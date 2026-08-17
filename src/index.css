@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400;1,14..32,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&display=swap');
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
 
@@ -61,8 +62,31 @@
     --glow-red-sm: 0 2px 16px -4px hsl(349 100% 50% / 0.2);
     --shadow-soft: 0 2px 16px -2px rgba(0, 0, 0, 0.08);
     --shadow-card: 0 4px 24px -4px rgba(0, 0, 0, 0.1);
-    --shadow-button: 0 4px 20px -4px hsl(349 100% 50% / 0.45);
+    --shadow-button: 0 4px 14px rgba(255, 0, 47, 0.25);
     --shadow-card-hover: 0 8px 32px -4px rgba(0, 0, 0, 0.14);
+
+    /* ── Motion tokens ──────────────────────────────────────────────────
+       Built-in CSS easings are too weak for UI. These are the house curves;
+       every transition on the page pulls from them so timing stays coherent. */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);      /* entrances, exits, hover */
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);  /* on-screen A→B movement */
+    --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1); /* momentum-driven only */
+
+    --dur-press: 130ms;   /* press feedback */
+    --dur-hover: 200ms;   /* hover / colour */
+    --dur-ui: 240ms;      /* dropdowns, accordions, small panels */
+    --dur-panel: 320ms;   /* larger panels, mobile menu */
+    --dur-reveal: 640ms;  /* marketing scroll reveals — allowed to be longer */
+
+    /* ── Layered elevation ──────────────────────────────────────────────
+       Real shadows are two or three overlapping casts, not one blur. */
+    --elev-1: 0 1px 2px rgba(16, 17, 20, 0.04), 0 2px 8px -2px rgba(16, 17, 20, 0.05);
+    --elev-2: 0 1px 2px rgba(16, 17, 20, 0.04), 0 6px 16px -6px rgba(16, 17, 20, 0.08),
+              0 14px 34px -14px rgba(16, 17, 20, 0.10);
+    --elev-3: 0 2px 4px rgba(16, 17, 20, 0.04), 0 12px 28px -8px rgba(16, 17, 20, 0.10),
+              0 30px 64px -26px rgba(16, 17, 20, 0.16);
+    --elev-brand: 0 2px 8px rgba(255, 0, 47, 0.18),
+                  0 8px 24px -4px rgba(255, 0, 47, 0.28);
 
     --sidebar-background: 0 0% 99%;
     --sidebar-foreground: 220 15% 12%;
@@ -83,9 +107,15 @@
 
   html {
     @apply scrollbar-hide;
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Anchor links land below the fixed navbar instead of underneath it */
+    scroll-padding-top: 6rem;
+  }
+
+  /* Smooth scrolling is motion — only offer it to users who want motion */
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
   }
 
   body {
@@ -94,10 +124,32 @@
     background-color: #FAFAFA;
   }
 
+  /* Optical typography: tracking and leading are size-specific, never one value
+     for all sizes. Large display type reads too loose, so it tightens; body
+     copy stays near zero. Tailwind utilities still override any of this. */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Fraunces', serif;
-    letter-spacing: -0.01em;
     font-weight: 700;
+    font-optical-sizing: auto;
+    text-wrap: balance;
+  }
+
+  h1 { letter-spacing: -0.038em; line-height: 1.04; }
+  h2 { letter-spacing: -0.03em;  line-height: 1.08; }
+  h3 { letter-spacing: -0.022em; line-height: 1.2;  }
+  h4, h5, h6 { letter-spacing: -0.014em; line-height: 1.3; }
+
+  p { text-wrap: pretty; }
+
+  /* One consistent, visible keyboard focus ring across the whole page */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid hsl(var(--ring) / 0.85);
+    outline-offset: 3px;
   }
 }
 
@@ -141,13 +193,116 @@
     background: #ffffff;
     border: 1px solid #EAEAEA;
     border-radius: 16px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    box-shadow: var(--elev-1);
+    transition: box-shadow var(--dur-hover) var(--ease-out),
+                transform var(--dur-hover) var(--ease-out);
   }
 
-  .light-card:hover {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-    transform: translateY(-2px);
+  @media (hover: hover) and (pointer: fine) {
+    .light-card:hover {
+      box-shadow: var(--elev-2);
+      transform: translateY(-2px);
+    }
+  }
+
+  /* ── Elevation utilities ──────────────────────────────────────────── */
+  .elev-1 { box-shadow: var(--elev-1); }
+  .elev-2 { box-shadow: var(--elev-2); }
+  .elev-3 { box-shadow: var(--elev-3); }
+  .elev-brand { box-shadow: var(--elev-brand); }
+
+  /* ── Translucent chrome ────────────────────────────────────────────
+     A floating functional layer with content scrolling underneath, not an
+     opaque bar. The inset top highlight is light catching the material. */
+  .nav-glass {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.12);
+  }
+
+  /* ── Scroll reveal ─────────────────────────────────────────────────
+     One system for the whole page, driven by useRevealOnScroll. Elements
+     reveal once and are never re-hidden, so content can't become
+     inaccessible if the observer misbehaves. */
+  [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, var(--reveal-y, 20px), 0);
+    transition: opacity var(--dur-reveal) var(--ease-out),
+                transform var(--dur-reveal) var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  [data-reveal].is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
+  }
+
+  /* ── Press feedback ────────────────────────────────────────────────
+     Feedback lives on pointer-down, not on release. */
+  .press {
+    transition: transform var(--dur-press) var(--ease-out),
+                box-shadow var(--dur-hover) var(--ease-out),
+                background-color var(--dur-hover) var(--ease-out),
+                border-color var(--dur-hover) var(--ease-out),
+                color var(--dur-hover) var(--ease-out);
+  }
+  .press:active { transform: scale(0.975); }
+
+  .press-lift {
+    transition: transform var(--dur-hover) var(--ease-out),
+                box-shadow var(--dur-hover) var(--ease-out),
+                border-color var(--dur-hover) var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .press-lift:hover { transform: translate3d(0, -3px, 0); }
+  }
+  .press-lift:active { transform: translate3d(0, -1px, 0) scale(0.99); }
+
+  /* ── Liquid hover fill (how-it-works steps) ───────────────────────
+     Scoped to this class — previously injected as a global rule at runtime. */
+  .liquid-fill {
+    clip-path: circle(0% at 0% 100%);
+    opacity: 0;
+    transition: clip-path 560ms var(--ease-out), opacity 160ms var(--ease-out);
+  }
+
+  /* MUST stay gated to match the Tailwind `group-hover:` utilities that flip the
+     text and badge to white. Tailwind's hoverOnlyWhenSupported wraps those in
+     this same query, so an ungated fill here means touch devices get the red
+     sweep with dark text and an invisible red-on-red step number. */
+  @media (hover: hover) and (pointer: fine) {
+    .liquid-host:hover .liquid-fill {
+      clip-path: circle(150% at 0% 100%);
+      opacity: 1;
+    }
+  }
+
+  /* ── Accordion ─────────────────────────────────────────────────────
+     grid-template-rows 0fr→1fr is the one place height animation is worth it;
+     there is no transform equivalent for "grow to content height". */
+  .accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows var(--dur-ui) var(--ease-out),
+                opacity 160ms var(--ease-out);
+  }
+  .accordion-panel > * { overflow: hidden; min-height: 0; }
+  .accordion-panel[data-open="true"] {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    transition: grid-template-rows var(--dur-ui) var(--ease-out),
+                opacity var(--dur-ui) var(--ease-out) 60ms;
+  }
+
+  /* Fade the seam where content meets floating chrome, instead of a hard rule */
+  .scroll-edge-mask {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
   }
 
   /* Gradients */
@@ -261,16 +416,16 @@
   80%, 100% { transform: scale(2); opacity: 0; }
 }
 
-/* Tailwind animate utilities */
-.animate-fade-in      { animation: fade-in 0.6s ease-out forwards; }
-.animate-fade-in-up   { animation: fade-in-up 0.75s ease-out forwards; }
-.animate-scale-in     { animation: scale-in 0.4s ease-out forwards; }
-.animate-slide-in-right { animation: slide-in-right 0.55s ease-out forwards; }
+/* Tailwind animate utilities — all easing pulled from the house curves */
+.animate-fade-in      { animation: fade-in 0.6s var(--ease-out) forwards; }
+.animate-fade-in-up   { animation: fade-in-up 0.7s var(--ease-out) forwards; }
+.animate-scale-in     { animation: scale-in 0.4s var(--ease-out) forwards; }
+.animate-slide-in-right { animation: slide-in-right 0.55s var(--ease-out) forwards; }
 .animate-float        { animation: float 4s ease-in-out infinite; }
 .animate-glow-pulse   { animation: glow-pulse 2.5s ease-in-out infinite; }
 .animate-shimmer      { animation: shimmer 3s linear infinite; }
 .animate-spin-slow    { animation: spin-slow 8s linear infinite; }
-.animate-bounce-in    { animation: bounce-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.animate-bounce-in    { animation: bounce-in 0.55s var(--ease-spring) forwards; }
 .animate-ping-slow    { animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
 
 /* Shimmer button effect — Lettzo Red */
@@ -291,4 +446,75 @@
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, #EAEAEA 30%, #EAEAEA 70%, transparent);
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────
+   Reduced motion means fewer and gentler, not zero. Opacity changes that aid
+   comprehension stay; position changes, elastic overshoot, ambient loops and
+   slow oscillations go. Elements that start at opacity:0 must still end
+   visible — never leave content stranded. */
+@keyframes rm-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Entrances become plain cross-fades — same end state, no travel */
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-scale-in,
+  .animate-slide-in-right,
+  .animate-bounce-in {
+    animation: rm-fade 200ms linear forwards !important;
+  }
+
+  /* Ambient and looping motion: large moving backgrounds, slow oscillations
+     near 0.2Hz, and infinite spins are the vestibular-trigger cases */
+  .animate-float,
+  .animate-glow-pulse,
+  .animate-shimmer,
+  .animate-spin-slow,
+  .animate-ping-slow,
+  .animate-pulse,
+  .animate-ping,
+  .btn-shimmer,
+  .orbit-ring,
+  .orbit-node {
+    animation: none !important;
+  }
+
+  /* Scroll reveals keep the fade, drop the travel */
+  [data-reveal] {
+    transform: none !important;
+    transition: opacity 240ms linear !important;
+    transition-delay: 0ms !important;
+  }
+
+  /* No hover/press displacement */
+  .press:active,
+  .press-lift:hover,
+  .press-lift:active { transform: none !important; }
+
+  /* Keep the colour change, drop the sweeping clip-path travel */
+  .liquid-fill {
+    transition: opacity 160ms linear !important;
+    clip-path: none !important;
+  }
+  .liquid-host:hover .liquid-fill { clip-path: none !important; }
+
+  .accordion-panel { transition-duration: 1ms !important; }
+}
+
+/* ─── Reduced transparency ───────────────────────────────────────────────
+   Translucent surfaces go frosty/solid rather than disappearing. */
+@media (prefers-reduced-transparency: reduce) {
+  .glass,
+  .glass-card,
+  .glass-card-light,
+  .nav-glass {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-color: #EAEAEA !important;
+  }
 }

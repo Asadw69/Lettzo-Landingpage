@@ -4,6 +4,12 @@ export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
+  future: {
+    // Touch devices fire a sticky false :hover on tap. This wraps every
+    // hover: utility in @media (hover: hover), so hover styling never gets
+    // stuck on a card after a mobile tap.
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     container: {
       center: true,
@@ -67,6 +73,8 @@ export default {
       fontFamily: {
         satoshi: ["Satoshi", "Inter", "system-ui", "sans-serif"],
         inter: ["Inter", "system-ui", "sans-serif"],
+        playfair: ["'Playfair Display'", "Georgia", "serif"],
+        fraunces: ["Fraunces", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -82,6 +90,24 @@ export default {
         xs: "2px",
         "2xl": "40px",
         "3xl": "64px",
+      },
+      transitionTimingFunction: {
+        // The house curves — built-in CSS easings are too weak for UI
+        "out-strong": "var(--ease-out)",
+        "in-out-strong": "var(--ease-in-out)",
+        spring: "var(--ease-spring)",
+      },
+      transitionDuration: {
+        press: "var(--dur-press)",
+        hover: "var(--dur-hover)",
+        ui: "var(--dur-ui)",
+        panel: "var(--dur-panel)",
+      },
+      boxShadow: {
+        "elev-1": "var(--elev-1)",
+        "elev-2": "var(--elev-2)",
+        "elev-3": "var(--elev-3)",
+        "elev-brand": "var(--elev-brand)",
       },
       keyframes: {
         "accordion-down": {
