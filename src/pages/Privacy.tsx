@@ -23,7 +23,7 @@ const Privacy = () => {
           <h1 className="font-fraunces text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-foreground mb-4">
             privacy policy
           </h1>
-          <p className="text-base sm:text-lg text-foreground/60 font-light max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-foreground/60 font-medium max-w-xl mx-auto leading-relaxed">
             we believe in total transparency. here is how we collect, use, and safeguard your data.
           </p>
         </div>
@@ -35,17 +35,17 @@ const Privacy = () => {
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
               1. Information We Collect
             </h2>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
               We collect minimal information required to help you discover plans and meet real people:
             </p>
-            <ul className="space-y-2 text-[15px] text-foreground/75 font-light pt-1">
+            <ul className="space-y-2 text-[15px] text-foreground/75 font-medium pt-1">
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span><strong className="font-medium text-foreground">Account details:</strong> Name, email address, date of birth, and profile details to set up your account.</span>
+                <span><strong className="font-semibold text-foreground">Account details:</strong> Name, email address, date of birth, and profile details to set up your account.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span><strong className="font-medium text-foreground">Activity & Location:</strong> Approximate location to show plans nearby, and interaction details to improve your experience.</span>
+                <span><strong className="font-semibold text-foreground">Activity & Location:</strong> Approximate location to show plans nearby, and interaction details to improve your experience.</span>
               </li>
             </ul>
           </section>
@@ -56,7 +56,7 @@ const Privacy = () => {
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
               2. How We Use Your Data
             </h2>
-            <ul className="space-y-2 text-[15px] text-foreground/75 font-light">
+            <ul className="space-y-2 text-[15px] text-foreground/75 font-medium">
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <span>To create, manage, and secure your Lettzo account.</span>
@@ -78,10 +78,10 @@ const Privacy = () => {
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
               3. Data Sharing & Protection
             </h2>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
               We never sell your personal information to third parties or advertisers.
             </p>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
               Data is shared strictly with essential service infrastructure providers (such as Supabase for database hosting) or when legally required by law.
             </p>
           </section>
@@ -92,7 +92,7 @@ const Privacy = () => {
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
               4. Your Rights & Control
             </h2>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
               You maintain total ownership of your personal information. You can edit your profile details, export your data, or permanently delete your account at any time.
             </p>
           </section>
@@ -105,7 +105,7 @@ const Privacy = () => {
               <h3 className="font-fraunces text-xl font-bold text-foreground mb-1">
                 questions about privacy?
               </h3>
-              <p className="text-sm text-foreground/60 font-light">
+              <p className="text-sm text-foreground/60 font-medium">
                 feel free to reach out to our team anytime
               </p>
             </div>

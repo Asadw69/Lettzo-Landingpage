@@ -95,7 +95,7 @@ const PlansSection: React.FC = () => {
               <span className="text-primary block md:inline lg:block">all in one place</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-600 leading-[1.7] font-light text-pretty">
+            <p className="text-sm sm:text-base text-slate-600 leading-[1.7] font-medium text-pretty">
               whether you're looking for coffee, football, hiking, road trips, movies, study sessions, or spontaneous adventures, Lettzo helps you discover people and plans that match your vibe
             </p>
           </div>

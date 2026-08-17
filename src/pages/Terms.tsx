@@ -23,7 +23,7 @@ const Terms = () => {
           <h1 className="font-fraunces text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-foreground mb-4">
             terms of service
           </h1>
-          <p className="text-base sm:text-lg text-foreground/60 font-light max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-foreground/60 font-medium max-w-xl mx-auto leading-relaxed">
             by accessing or using Lettzo, you agree to these clear, straightforward terms.
           </p>
         </div>
@@ -35,7 +35,7 @@ const Terms = () => {
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
               1. Eligibility & Age Requirements
             </h2>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
               You must be at least 16 years of age to use Lettzo. By using the app, you confirm you are legally capable of entering this agreement and will comply with all local laws and regulations.
             </p>
           </section>
@@ -46,7 +46,7 @@ const Terms = () => {
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
               2. User Accounts & Integrity
             </h2>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
               You agree to provide accurate information and maintain the security of your account. You are solely responsible for any activity that occurs under your profile.
             </p>
           </section>
@@ -57,10 +57,10 @@ const Terms = () => {
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
               3. Community Standards & Conduct
             </h2>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
               Lettzo is built for genuine real-world meetups and shared hobbies. We maintain a zero-tolerance policy towards:
             </p>
-            <ul className="space-y-2 text-[15px] text-foreground/75 font-light pt-1">
+            <ul className="space-y-2 text-[15px] text-foreground/75 font-medium pt-1">
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <span>Harassment, hate speech, threats, or abusive behavior.</span>
@@ -82,7 +82,7 @@ const Terms = () => {
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
               4. Safety & In-Person Meetups
             </h2>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
               Lettzo facilitates connections, but in-person meetups are organized independently by users. Always meet in well-lit public places and prioritize your personal safety and comfort.
             </p>
           </section>
@@ -93,7 +93,7 @@ const Terms = () => {
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
               5. Limitation of Liability
             </h2>
-            <p className="text-[15px] text-foreground/75 font-light leading-relaxed">
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
               To the fullest extent permitted by law, Lettzo and its team are not liable for direct or indirect disputes, injuries, damages, or occurrences arising from interactions with other users.
             </p>
           </section>
@@ -106,7 +106,7 @@ const Terms = () => {
               <h3 className="font-fraunces text-xl font-bold text-foreground mb-1">
                 legal questions or support?
               </h3>
-              <p className="text-sm text-foreground/60 font-light">
+              <p className="text-sm text-foreground/60 font-medium">
                 reach out to our founder directly
               </p>
             </div>
