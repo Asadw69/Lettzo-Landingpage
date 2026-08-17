@@ -41,7 +41,7 @@ const StoryShell: React.FC<{ card: StoryCard; children: React.ReactNode }> = ({ 
           </div>
         </div>
 
-        <p className="text-[15px] text-slate-600 font-light leading-[1.65] mb-8">
+        <p className="text-[15px] text-slate-600 font-medium leading-[1.65] mb-8">
           {card.description}
         </p>
       </div>
