@@ -33,7 +33,7 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover object-bottom md:object-[center_85%]"
+          className="w-full h-full object-cover object-[center_25%] md:object-[center_85%]"
         >
           <source
             src="https://strvid.nyc3.cdn.digitaloceanspaces.com/cloudinary/flowers_motion_r54og5.webm"
@@ -110,8 +110,8 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
           viewBox="0 0 1440 120"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
-          className="w-full block"
-          style={{ height: "100px", marginBottom: "-1px" }}
+          className="w-full block h-14 sm:h-20 md:h-[100px]"
+          style={{ marginBottom: "-1px" }}
           aria-hidden="true"
         >
           <path
