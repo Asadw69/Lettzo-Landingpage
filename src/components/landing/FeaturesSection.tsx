@@ -131,7 +131,7 @@ const FeaturesSection = () => {
             <div
               key={feature.title}
               data-reveal
-              style={reveal(index * 60, "24px")}
+              style={reveal(index * 50, "20px")}
               className={feature.className}
             >
               <div
@@ -168,7 +168,7 @@ const FeaturesSection = () => {
           {/* Safety Wide Card */}
           <div
             data-reveal
-            style={reveal(features.length * 60, "24px")}
+            style={reveal(features.length * 50, "20px")}
             className="md:col-span-3"
           >
             <div className="h-full bg-white rounded-[1.75rem] p-8 md:px-12 md:py-10 border border-[#EAEAEA] shadow-elev-1 flex flex-col md:flex-row items-center justify-between gap-8 group hover:border-emerald-300 hover:shadow-elev-2 hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-hover ease-out-strong">

@@ -12,6 +12,10 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
 
   useEffect(() => {
     if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.defaultMuted = true;
+      videoRef.current.setAttribute("playsinline", "true");
+      videoRef.current.setAttribute("webkit-playsinline", "true");
       videoRef.current.play().catch(() => {
         // Autoplay may be handled by browser policy
       });
@@ -33,15 +37,18 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
           loop
           muted
           playsInline
+          // @ts-ignore
+          webkit-playsinline="true"
+          preload="auto"
           className="w-full h-full object-cover object-[center_25%] md:object-[center_85%]"
         >
           <source
-            src="https://strvid.nyc3.cdn.digitaloceanspaces.com/cloudinary/flowers_motion_r54og5.webm"
-            type="video/webm"
-          />
-          <source
             src="https://strvid.nyc3.cdn.digitaloceanspaces.com/cloudinary/flowers_motion_r54og5.mp4"
             type="video/mp4"
+          />
+          <source
+            src="https://strvid.nyc3.cdn.digitaloceanspaces.com/cloudinary/flowers_motion_r54og5.webm"
+            type="video/webm"
           />
         </video>
         {/* Subtle Bloomora gradient overlay */}

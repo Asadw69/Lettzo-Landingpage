@@ -64,11 +64,12 @@ const PlansSection: React.FC = () => {
   return (
     <section className="relative pb-28 pt-16 sm:pb-36 sm:pt-28 md:py-40 overflow-hidden bg-[#FF002F] text-white">
       {/* Top Wave SVG Shape - Classic Natural Wave Curve */}
-      <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none z-20 pointer-events-none">
+      <div className="absolute -top-px left-0 right-0 overflow-hidden leading-none z-20 pointer-events-none">
         <svg
-          className="relative block w-full h-12 sm:h-18 md:h-24 text-[#FBFBFB]"
+          className="relative block w-full h-12 sm:h-18 md:h-24 text-[#FBFBFB] scale-y-[1.02] origin-top"
           viewBox="0 0 1440 100"
           preserveAspectRatio="none"
+          style={{ marginTop: "-2px" }}
           aria-hidden="true"
         >
           <path
@@ -192,11 +193,12 @@ const PlansSection: React.FC = () => {
       </div>
 
       {/* Bottom Wave SVG Shape - Classic Natural Wave Curve */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-20 pointer-events-none">
+      <div className="absolute -bottom-px left-0 right-0 overflow-hidden leading-none z-20 pointer-events-none">
         <svg
-          className="relative block w-full h-12 sm:h-18 md:h-24 text-[#FBFBFB]"
+          className="relative block w-full h-12 sm:h-18 md:h-24 text-[#FBFBFB] scale-y-[1.02] origin-bottom"
           viewBox="0 0 1440 100"
           preserveAspectRatio="none"
+          style={{ marginBottom: "-2px" }}
           aria-hidden="true"
         >
           <path

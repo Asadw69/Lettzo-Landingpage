@@ -99,9 +99,6 @@ const WaitlistSection = () => {
 
   return (
     <section id="waitlist" className="py-24 md:py-36 relative overflow-hidden bg-white">
-      {/* Section divider top */}
-      <div className="absolute top-0 left-0 right-0 section-divider" />
-
       {/* Background accents */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary/4 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-pink-100/60 rounded-full blur-[100px] pointer-events-none" />

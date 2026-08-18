@@ -39,7 +39,7 @@ interface RevealOptions {
 export function useRevealOnScroll<T extends HTMLElement = HTMLDivElement>(
   options: RevealOptions = {},
 ) {
-  const { threshold = 0, rootMargin = "0px 0px -12% 0px" } = options;
+  const { threshold = 0, rootMargin = "0px 0px 50px 0px" } = options;
   const containerRef = useRef<T>(null);
 
   useEffect(() => {
