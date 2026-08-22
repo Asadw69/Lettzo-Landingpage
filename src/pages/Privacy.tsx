@@ -1,7 +1,7 @@
-import Navbar from "@/components/landing/Navbar";
+﻿import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useNavigate } from "react-router-dom";
-import { Shield, Mail, Lock, UserCheck, Eye } from "lucide-react";
+import { Shield, Mail, Lock, UserCheck, Eye, MapPin } from "lucide-react";
 
 const Privacy = () => {
   const navigate = useNavigate();
@@ -41,11 +41,15 @@ const Privacy = () => {
             <ul className="space-y-2 text-[15px] text-foreground/75 font-medium pt-1">
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span><strong className="font-semibold text-foreground">Account details:</strong> Name, email address, date of birth, and profile details to set up your account.</span>
+                <span><strong className="font-semibold text-foreground">Account details:</strong> Name, username, email address, gender, date of birth (for age verification), and profile pictures/bio.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span><strong className="font-semibold text-foreground">Activity & Location:</strong> Approximate location to show plans nearby, and interaction details to improve your experience.</span>
+                <span><strong className="font-semibold text-foreground">Location Data:</strong> Device GPS coordinates (collected with user consent while using the app to show nearby social plans, map exploration, and distance calculation). Location data is never sold or shared with third-party advertisers.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span><strong className="font-semibold text-foreground">Content & Communications:</strong> Social plans created or joined, messages sent, and 24-hour stories.</span>
               </li>
             </ul>
           </section>
@@ -67,7 +71,7 @@ const Privacy = () => {
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span>To send vital account notifications and activity updates.</span>
+                <span>To deliver chat messages, plan requests, and vital account notifications.</span>
               </li>
             </ul>
           </section>
@@ -76,13 +80,13 @@ const Privacy = () => {
 
           <section className="space-y-3">
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
-              3. Data Sharing & Protection
+              3. Data Sharing & Infrastructure
             </h2>
             <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
-              We never sell your personal information to third parties or advertisers.
+              <strong>We NEVER sell, rent, or trade your personal data to advertisers.</strong>
             </p>
             <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
-              Data is shared strictly with essential service infrastructure providers (such as Supabase for database hosting) or when legally required by law.
+              Data is processed securely with trusted infrastructure partners (such as Supabase for database hosting and Firebase/Apple for push notifications) with strict access controls.
             </p>
           </section>
 
@@ -90,10 +94,21 @@ const Privacy = () => {
 
           <section className="space-y-3">
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
-              4. Your Rights & Control
+              4. Data Retention & Account Deletion
             </h2>
             <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
-              You maintain total ownership of your personal information. You can edit your profile details, export your data, or permanently delete your account at any time.
+              You maintain total control over your data. You can edit your profile at any time or permanently delete your account and all associated data via <strong>Settings ➔ Delete Account</strong> in the app.
+            </p>
+          </section>
+
+          <div className="h-px bg-slate-100" />
+
+          <section className="space-y-3">
+            <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
+              5. Children's Privacy
+            </h2>
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
+              Lettzo is strictly designed for individuals 16 years and older. We do not knowingly collect personal information from children under 16.
             </p>
           </section>
 

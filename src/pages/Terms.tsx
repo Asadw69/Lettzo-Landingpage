@@ -1,7 +1,7 @@
-import Navbar from "@/components/landing/Navbar";
+﻿import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useNavigate } from "react-router-dom";
-import { FileText, ShieldAlert, Users, Scale, Mail } from "lucide-react";
+import { Shield, Mail, ShieldAlert, Scale, Users } from "lucide-react";
 
 const Terms = () => {
   const navigate = useNavigate();
@@ -44,10 +44,10 @@ const Terms = () => {
 
           <section className="space-y-3">
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
-              2. User Accounts & Integrity
+              2. User Accounts & Security
             </h2>
             <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
-              You agree to provide accurate information and maintain the security of your account. You are solely responsible for any activity that occurs under your profile.
+              You agree to provide accurate information and maintain the security of your account credentials. You are solely responsible for any activity that occurs under your profile.
             </p>
           </section>
 
@@ -55,25 +55,36 @@ const Terms = () => {
 
           <section className="space-y-3">
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
-              3. Community Standards & Conduct
+              3. User-Generated Content & Zero-Tolerance Policy
             </h2>
             <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
-              Lettzo is built for genuine real-world meetups and shared hobbies. We maintain a zero-tolerance policy towards:
+              Lettzo is built for genuine real-world meetups and shared activities. We enforce a strict <strong>Zero-Tolerance Policy</strong> for objectionable or abusive content. Prohibited behaviors include:
             </p>
             <ul className="space-y-2 text-[15px] text-foreground/75 font-medium pt-1">
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span>Harassment, hate speech, threats, or abusive behavior.</span>
+                <span>Harassment, hate speech, bullying, threats, or intimidation.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span>Impersonation, scams, spam, or unsolicited promotions.</span>
+                <span>Nudity, sexually explicit material, or commercial solicitation.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span>Posting unlawful, explicit, or harmful media.</span>
+                <span>Impersonation, scams, fraud, spam, or misleading information.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span>Violence, self-harm incitement, or posting unlawful media.</span>
               </li>
             </ul>
+
+            <div className="mt-4 p-4 bg-slate-50 border border-slate-100 rounded-2xl space-y-1.5">
+              <h4 className="font-bold text-foreground text-sm">Moderation, Reporting & 24-Hour Action:</h4>
+              <p className="text-[13px] text-foreground/70 leading-relaxed">
+                Users can report objectionable content or block abusive users directly in-app. Our moderation team reviews reported violations and takes action within <strong>24 hours</strong>, including immediate content removal and permanent account bans.
+              </p>
+            </div>
           </section>
 
           <div className="h-px bg-slate-100" />
@@ -83,7 +94,7 @@ const Terms = () => {
               4. Safety & In-Person Meetups
             </h2>
             <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
-              Lettzo facilitates connections, but in-person meetups are organized independently by users. Always meet in well-lit public places and prioritize your personal safety and comfort.
+              Lettzo facilitates connections, but in-person meetups are organized independently by users. Always meet in well-lit public places, tell a trusted friend or family member, and prioritize your personal safety.
             </p>
           </section>
 
@@ -91,10 +102,21 @@ const Terms = () => {
 
           <section className="space-y-3">
             <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
-              5. Limitation of Liability
+              5. Account Deletion Rights
             </h2>
             <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
-              To the fullest extent permitted by law, Lettzo and its team are not liable for direct or indirect disputes, injuries, damages, or occurrences arising from interactions with other users.
+              You have the right to delete your account and all associated personal data at any time directly in the app via <strong>Settings ➔ Delete Account</strong>.
+            </p>
+          </section>
+
+          <div className="h-px bg-slate-100" />
+
+          <section className="space-y-3">
+            <h2 className="font-fraunces text-2xl font-bold text-foreground tracking-tight">
+              6. Limitation of Liability
+            </h2>
+            <p className="text-[15px] text-foreground/75 font-medium leading-relaxed">
+              To the fullest extent permitted by law, Lettzo and its team are not liable for direct or indirect disputes, injuries, damages, or occurrences arising from user interactions or offline events.
             </p>
           </section>
 
@@ -107,7 +129,7 @@ const Terms = () => {
                 legal questions or support?
               </h3>
               <p className="text-sm text-foreground/60 font-medium">
-                reach out to our founder directly
+                reach out to our team directly
               </p>
             </div>
             <a
